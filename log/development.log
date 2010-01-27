@@ -8323,3 +8323,38 @@ Processing SpeciesController#index (for 127.0.0.1 at 2010-01-27 14:20:00) [GET]
 Rendering template within layouts/application
 Rendering species/index
 Completed in 5ms (View: 1, DB: 0) | 200 OK [http://localhost/species]
+
+
+Processing SpeciesController#index (for 127.0.0.1 at 2010-01-27 14:23:45) [GET]
+  [4;36;1mSpecies Load (0.3ms)[0m   [0;1mSELECT * FROM "species" [0m
+Rendering template within layouts/application
+Rendering species/index
+Completed in 63ms (View: 10, DB: 0) | 200 OK [http://localhost/species]
+
+
+Processing SpeciesController#new (for 127.0.0.1 at 2010-01-27 14:23:47) [GET]
+Rendering template within layouts/application
+Rendering species/new
+Rendered species/_character (5.0ms)
+Rendered species/_form (101.4ms)
+Completed in 114ms (View: 109, DB: 0) | 200 OK [http://localhost/species/new]
+
+
+Processing SpeciesController#create (for 127.0.0.1 at 2010-01-27 14:23:54) [POST]
+  Parameters: {"commit"=>"Submit", "authenticity_token"=>"kQED3Z/0zZ6VHSdwiFu1u6NPMPFLFq8MEDJZt3g4j9o=", "species"=>{"characters_attributes"=>{"1264631030092"=>{"name"=>"asdf", "unit"=>"", "value"=>""}}, "scientific_name"=>"Test"}}
+Rendering template within layouts/application
+Rendering species/new
+Rendered species/_character (1.9ms)
+Rendered species/_character (4.1ms)
+Rendered species/_form (10.1ms)
+Completed in 23ms (View: 12, DB: 0) | 200 OK [http://localhost/species/create]
+
+
+Processing SpeciesController#create (for 127.0.0.1 at 2010-01-27 14:24:07) [POST]
+  Parameters: {"commit"=>"Submit", "authenticity_token"=>"kQED3Z/0zZ6VHSdwiFu1u6NPMPFLFq8MEDJZt3g4j9o=", "species"=>{"characters_attributes"=>{"1264631030092"=>{"name"=>"asdf", "unit"=>"", "value"=>""}}, "scientific_name"=>"Test"}}
+Rendering template within layouts/application
+Rendering species/new
+Rendered species/_character (2.1ms)
+Rendered species/_character (6.0ms)
+Rendered species/_form (12.9ms)
+Completed in 28ms (View: 16, DB: 0) | 200 OK [http://localhost/species/create]
