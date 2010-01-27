@@ -6583,3 +6583,87 @@ Rendered species/forms/_character (3.2ms)
 Rendered species/forms/_character (3.3ms)
 Rendered species/_form (13.7ms)
 Completed in 75ms (View: 15, DB: 0) | 200 OK [http://localhost/species/15/edit]
+
+
+Processing SpeciesController#edit (for 127.0.0.1 at 2010-01-26 17:02:59) [GET]
+  Parameters: {"id"=>"15"}
+  [4;36;1mSpecies Load (0.2ms)[0m   [0;1mSELECT * FROM "species" WHERE ("species"."id" = 15) [0m
+Rendering template within layouts/application
+Rendering species/edit
+Rendered species/forms/_character (4.1ms)
+  [4;35;1mCharacter Load (0.3ms)[0m   [0mSELECT * FROM "characters" WHERE ("characters".species_id = 15) [0m
+Rendered species/forms/_character (3.1ms)
+Rendered species/_form (32.0ms)
+Completed in 72ms (View: 46, DB: 0) | 200 OK [http://localhost/species/15/edit]
+
+
+Processing SpeciesController#update (for 127.0.0.1 at 2010-01-26 17:03:02) [PUT]
+  Parameters: {"commit"=>"Save", "authenticity_token"=>"kQED3Z/0zZ6VHSdwiFu1u6NPMPFLFq8MEDJZt3g4j9o=", "id"=>"15", "species"=>{"existing_character_attributes"=>{"7"=>{"name"=>"Height", "unit"=>"m", "value"=>"1.829"}}, "scientific_name"=>"Homo sapiens"}}
+  [4;36;1mSpecies Load (0.1ms)[0m   [0;1mSELECT * FROM "species" WHERE ("species"."id" = 15) [0m
+  [4;35;1mCharacter Load (0.2ms)[0m   [0mSELECT * FROM "characters" WHERE ("characters".species_id = 15) [0m
+Redirected to http://localhost:3000/species/15
+Completed in 11ms (DB: 0) | 302 Found [http://localhost/species/15]
+
+
+Processing SpeciesController#show (for 127.0.0.1 at 2010-01-26 17:03:02) [GET]
+  Parameters: {"id"=>"15"}
+  [4;36;1mSpecies Load (0.1ms)[0m   [0;1mSELECT * FROM "species" WHERE ("species"."id" = 15) [0m
+Rendering template within layouts/application
+Rendering species/show
+  [4;35;1mCharacter Load (0.2ms)[0m   [0mSELECT * FROM "characters" WHERE ("characters".species_id = 15) [0m
+Rendered species/_character (0.8ms)
+Completed in 17ms (View: 13, DB: 0) | 200 OK [http://localhost/species/15]
+
+
+Processing SpeciesController#new (for 127.0.0.1 at 2010-01-26 17:03:04) [GET]
+Rendering template within layouts/application
+Rendering species/new
+Rendered species/forms/_character (1.9ms)
+Rendered species/_form (5.0ms)
+Completed in 17ms (View: 10, DB: 0) | 200 OK [http://localhost/species/new]
+
+
+Processing SpeciesController#create (for 127.0.0.1 at 2010-01-26 17:03:06) [POST]
+  Parameters: {"commit"=>"Save", "authenticity_token"=>"kQED3Z/0zZ6VHSdwiFu1u6NPMPFLFq8MEDJZt3g4j9o=", "species"=>{"scientific_name"=>""}}
+Rendering template within layouts/application
+Rendering species/new
+
+ActionView::TemplateError (species_instance_url failed to generate from {:controller=>"species", :action=>"show", :id=>#<Species id: nil, scientific_name: "", created_at: nil, updated_at: nil>}, expected: {:controller=>"species", :action=>"show"}, diff: {:id=>#<Species id: nil, scientific_name: "", created_at: nil, updated_at: nil>}) on line #1 of app/views/species/_form.haml:
+1: - action = params[:action] == 'new' ? "/species/create" : species_instance_path(@species)
+2: - method = params[:action] == 'new' ? "post" : "put"
+3: 
+4: = error_messages_for :species
+
+    (eval):16:in `species_instance_path'
+    app/views/species/_form.haml:1:in `_run_haml_app47views47species47_form46haml_locals_form_object'
+    haml (2.2.17) lib/haml/helpers/action_view_mods.rb:11:in `render'
+    haml (2.2.17) lib/haml/helpers.rb:96:in `non_haml'
+    haml (2.2.17) lib/haml/helpers/action_view_mods.rb:11:in `render'
+    app/views/species/new.haml:2:in `_run_haml_app47views47species47new46haml'
+    haml (2.2.17) lib/haml/helpers/action_view_mods.rb:13:in `render'
+    haml (2.2.17) lib/haml/helpers/action_view_mods.rb:13:in `render'
+    app/controllers/species_controller.rb:26:in `create'
+    haml (2.2.17) lib/sass/plugin/rails.rb:19:in `process'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (98.8ms)
+Rendered rescues/_request_and_response (1.1ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing SpeciesController#create (for 127.0.0.1 at 2010-01-26 17:03:49) [POST]
+  Parameters: {"commit"=>"Save", "authenticity_token"=>"kQED3Z/0zZ6VHSdwiFu1u6NPMPFLFq8MEDJZt3g4j9o=", "species"=>{"scientific_name"=>""}}
+Rendering template within layouts/application
+Rendering species/new
+Rendered species/forms/_character (5.4ms)
+Rendered species/_form (14.9ms)
+Completed in 28ms (View: 20, DB: 0) | 200 OK [http://localhost/species/create]

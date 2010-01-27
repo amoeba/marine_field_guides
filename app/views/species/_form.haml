@@ -1,4 +1,4 @@
-- action = params[:action] == 'new' ? species_path : species_instance_path(@species)
+- action = params[:action] == 'new' ? "/species/create" : species_instance_url(:species, @species)
 - method = params[:action] == 'new' ? "post" : "put"
 
 = error_messages_for :species
