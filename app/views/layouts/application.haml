@@ -1,0 +1,17 @@
+!!!
+%html
+  %head
+    %title
+    = stylesheet_link_tag("application")
+    = javascript_include_tag("jquery")
+    = javascript_include_tag("jrails")
+  %body
+  #header
+    %h1
+      %a{:href => "/"} Field Guides
+    #navigation
+      %ul
+        %li= link_to("All Species", :controller => "species")
+        %li= link_to("New Species", :controller => "species", :action => "new")
+  #content= yield
+  #footer

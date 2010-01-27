@@ -1,0 +1,22 @@
+- action = params[:action] == 'new' ? species_path : species_instance_path(@species)
+- method = params[:action] == 'new' ? "post" : "put"
+
+= error_messages_for :species
+
+- form_for(:species, @species, :url => action, :method => method) do |f|
+  - if method == "put"
+    %input{:name => "_method", :type => "hidden", :value => "put"}
+  
+  %h3 General Attributes
+  = f.label(:scientific_name)
+  = f.text_field(:scientific_name)
+  %br
+  
+  %p
+    %h3 Character Traits
+    = add_character_link("Add a Character Trait")
+    
+    %ul#characters
+      = render :partial => 'species/forms/character', :collection => @species.characters.reject(&:new_record?)
+    
+  = f.submit "Save"

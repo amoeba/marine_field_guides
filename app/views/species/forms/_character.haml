@@ -1,0 +1,16 @@
+- new_or_existing = character.new_record? ? 'new' : 'existing'
+- prefix = "species[#{new_or_existing}_character_attributes][]"
+
+%li
+  - fields_for(prefix, character) do |charform|
+    = charform.label(:name)
+    = charform.text_field(:name, :size => "25")
+  
+    = charform.label(:value)
+    = charform.text_field(:value, :size => 10)
+  
+    = charform.label(:unit)
+    = charform.text_field(:unit, :size => 10)
+  
+    = link_to_function("remove", "$(this).parent().remove()", :class => "action")
+    %br

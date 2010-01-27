@@ -1,0 +1,11 @@
+%h2 Displaying single Species
+%p
+  = link_to("edit", edit_species_instance_path(@species), :class => "action")
+  = link_to("delete", species_instance_path(@species), :method => 'delete', :confirm => "Are you sure?", :class => "action")
+
+Scientific Name:
+%em= "#{@species.scientific_name}"
+
+%h3 Character Traits
+%ul
+  = render(:partial => 'character', :collection => @species.characters)
