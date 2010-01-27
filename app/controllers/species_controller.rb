@@ -9,11 +9,6 @@ class SpeciesController < ApplicationController
   
   def new
     @species = Species.new
-    @species.characters.build
-    
-    respond_to do |format|
-      format.html
-    end
   end
   
   def create
@@ -21,7 +16,7 @@ class SpeciesController < ApplicationController
     
     if(@species.save)
       flash[:notice] = "Successfully created Species and ____"
-      redirect_to(species_instance_path(@species))
+      redirect_to(@species)
     else
       render(:action => "new")
     end
@@ -32,13 +27,11 @@ class SpeciesController < ApplicationController
   end
   
   def update
-    params[:species][:existing_character_attributes] ||= {}
-    
     @species = Species.find(params[:id])
     
     if(@species.update_attributes(params[:species]))
       flash[:notice] = "Successfully updated Species and ____"
-      redirect_to(species_instance_path(@species))
+      redirect_to(species_instance_url(@species))
     else
       render(:action => 'edit')
     end
@@ -46,12 +39,8 @@ class SpeciesController < ApplicationController
   
   def destroy
     @species = Species.find(params[:id])
-    
-    if(@species.destroy)
-      flash[:notice] = "Successfully destroyed Species"
-      redirect_to(:controller => "species")
-    else
-      render(:action => "edit")
-    end
+    @species.destroy
+    flash[:notice] = "Successfully destroyed Species"
+    redirect_to(species_url)
   end
 end

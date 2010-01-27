@@ -1,10 +1,7 @@
-- action = params[:action] == 'new' ? "/species/create" : species_instance_url(:species, @species)
-- method = params[:action] == 'new' ? "post" : "put"
-
-= error_messages_for :species
-
-- form_for(:species, @species, :url => action, :method => method) do |f|
-  - if method == "put"
+- form_for(:species, @species, :url => action, :method => 'post') do |f|
+  = f.error_messages
+  
+  - if put 
     %input{:name => "_method", :type => "hidden", :value => "put"}
   
   %h3 General Attributes
@@ -12,11 +9,14 @@
   = f.text_field(:scientific_name)
   %br
   
-  %p
+  %div.group
     %h3 Character Traits
-    = add_character_link("Add a Character Trait")
+    = add_child_link("Add a Character Trait", f, :characters)
+    %br
     
     %ul#characters
-      = render :partial => 'species/forms/character', :collection => @species.characters.reject(&:new_record?)
+      - f.fields_for(:characters) do |characters_form|
+        %li= render(:partial => 'character', :locals => { :f => characters_form})
     
-  = f.submit "Save"
+
+  = f.submit "Submit"

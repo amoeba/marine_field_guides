@@ -6667,3 +6667,1659 @@ Rendering species/new
 Rendered species/forms/_character (5.4ms)
 Rendered species/_form (14.9ms)
 Completed in 28ms (View: 20, DB: 0) | 200 OK [http://localhost/species/create]
+
+
+Processing SpeciesController#index (for 127.0.0.1 at 2010-01-27 11:36:57) [GET]
+  [4;36;1mSpecies Load (0.5ms)[0m   [0;1mSELECT * FROM "species" [0m
+Rendering template within layouts/application
+Rendering species/index
+Completed in 141ms (View: 25, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing SpeciesController#show (for 127.0.0.1 at 2010-01-27 11:37:00) [GET]
+  Parameters: {"id"=>"15"}
+  [4;35;1mSpecies Load (9.3ms)[0m   [0mSELECT * FROM "species" WHERE ("species"."id" = 15) [0m
+Rendering template within layouts/application
+Rendering species/show
+  [4;36;1mCharacter Load (0.3ms)[0m   [0;1mSELECT * FROM "characters" WHERE ("characters".species_id = 15) [0m
+Rendered species/_character (0.8ms)
+Completed in 105ms (View: 90, DB: 10) | 200 OK [http://localhost/species/15]
+
+
+Processing SpeciesController#edit (for 127.0.0.1 at 2010-01-27 11:37:02) [GET]
+  Parameters: {"id"=>"15"}
+  [4;35;1mSpecies Load (0.2ms)[0m   [0mSELECT * FROM "species" WHERE ("species"."id" = 15) [0m
+Rendering template within layouts/application
+Rendering species/edit
+  [4;36;1mCharacter Load (0.3ms)[0m   [0;1mSELECT * FROM "characters" WHERE ("characters".species_id = 15) [0m
+
+ActionView::TemplateError (undefined method `name' for nil:NilClass) on line #2 of app/views/species/_character.haml:
+1: %li
+2:   = "Name: `#{character.name}`"
+3:   = "Value: `#{character.value}`"
+4:   = "Unit: `#{character.unit}`"
+
+    app/views/species/_character.haml:2:in `_run_haml_app47views47species47_character46haml_locals_character_f_object'
+    haml (2.2.17) lib/haml/helpers/action_view_mods.rb:11:in `render'
+    haml (2.2.17) lib/haml/helpers.rb:96:in `non_haml'
+    haml (2.2.17) lib/haml/helpers/action_view_mods.rb:11:in `render'
+    app/helpers/application_helper.rb:17:in `new_child_fields'
+    app/helpers/application_helper.rb:16:in `new_child_fields'
+    app/helpers/application_helper.rb:8:in `add_child_link'
+    app/views/species/_form.haml:17:in `_run_haml_app47views47species47_form46haml_locals_form_object'
+    haml (2.2.17) lib/haml/helpers/action_view_mods.rb:164:in `call'
+    haml (2.2.17) lib/haml/helpers/action_view_mods.rb:164:in `form_for'
+    haml (2.2.17) lib/haml/helpers.rb:545:in `call'
+    haml (2.2.17) lib/haml/helpers.rb:545:in `haml_bind_proc'
+    haml (2.2.17) lib/haml/helpers/action_view_mods.rb:170:in `form_for'
+    app/views/species/_form.haml:4:in `_run_haml_app47views47species47_form46haml_locals_form_object'
+    haml (2.2.17) lib/haml/helpers/action_view_mods.rb:11:in `render'
+    haml (2.2.17) lib/haml/helpers.rb:96:in `non_haml'
+    haml (2.2.17) lib/haml/helpers/action_view_mods.rb:11:in `render'
+    app/views/species/edit.haml:2:in `_run_haml_app47views47species47edit46haml'
+    haml (2.2.17) lib/haml/helpers/action_view_mods.rb:13:in `render'
+    haml (2.2.17) lib/haml/helpers/action_view_mods.rb:13:in `render'
+    haml (2.2.17) lib/sass/plugin/rails.rb:19:in `process'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (55.9ms)
+Rendered rescues/_request_and_response (1.1ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing SpeciesController#edit (for 127.0.0.1 at 2010-01-27 11:38:40) [GET]
+  Parameters: {"id"=>"15"}
+  [4;35;1mSpecies Load (0.2ms)[0m   [0mSELECT * FROM "species" WHERE ("species"."id" = 15) [0m
+Rendering template within layouts/application
+Rendering species/edit
+  [4;36;1mCharacter Load (0.2ms)[0m   [0;1mSELECT * FROM "characters" WHERE ("characters".species_id = 15) [0m
+
+ActionView::TemplateError (undefined method `name' for nil:NilClass) on line #2 of app/views/species/_character.haml:
+1: %li
+2:   = "Name: `#{character.name}`"
+3:   = "Value: `#{character.value}`"
+4:   = "Unit: `#{character.unit}`"
+
+    app/views/species/_character.haml:2:in `_run_haml_app47views47species47_character46haml_locals_character_f_object'
+    haml (2.2.17) lib/haml/helpers/action_view_mods.rb:11:in `render'
+    haml (2.2.17) lib/haml/helpers.rb:96:in `non_haml'
+    haml (2.2.17) lib/haml/helpers/action_view_mods.rb:11:in `render'
+    app/helpers/application_helper.rb:17:in `new_child_fields'
+    app/helpers/application_helper.rb:16:in `new_child_fields'
+    app/helpers/application_helper.rb:8:in `add_child_link'
+    app/views/species/_form.haml:17:in `_run_haml_app47views47species47_form46haml_locals_form_object'
+    haml (2.2.17) lib/haml/helpers/action_view_mods.rb:164:in `call'
+    haml (2.2.17) lib/haml/helpers/action_view_mods.rb:164:in `form_for'
+    haml (2.2.17) lib/haml/helpers.rb:545:in `call'
+    haml (2.2.17) lib/haml/helpers.rb:545:in `haml_bind_proc'
+    haml (2.2.17) lib/haml/helpers/action_view_mods.rb:170:in `form_for'
+    app/views/species/_form.haml:4:in `_run_haml_app47views47species47_form46haml_locals_form_object'
+    haml (2.2.17) lib/haml/helpers/action_view_mods.rb:11:in `render'
+    haml (2.2.17) lib/haml/helpers.rb:96:in `non_haml'
+    haml (2.2.17) lib/haml/helpers/action_view_mods.rb:11:in `render'
+    app/views/species/edit.haml:2:in `_run_haml_app47views47species47edit46haml'
+    haml (2.2.17) lib/haml/helpers/action_view_mods.rb:13:in `render'
+    haml (2.2.17) lib/haml/helpers/action_view_mods.rb:13:in `render'
+    haml (2.2.17) lib/sass/plugin/rails.rb:19:in `process'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (53.6ms)
+Rendered rescues/_request_and_response (0.5ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing SpeciesController#edit (for 127.0.0.1 at 2010-01-27 11:38:55) [GET]
+  Parameters: {"id"=>"15"}
+  [4;35;1mSpecies Load (0.2ms)[0m   [0mSELECT * FROM "species" WHERE ("species"."id" = 15) [0m
+Rendering template within layouts/application
+Rendering species/edit
+  [4;36;1mCharacter Load (0.3ms)[0m   [0;1mSELECT * FROM "characters" WHERE ("characters".species_id = 15) [0m
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+You might have expected an instance of ActiveRecord::Base.
+The error occurred while evaluating nil.new_record?) on line #1 of app/views/species/forms/_character.haml:
+1: - new_or_existing = character.new_record? ? 'new' : 'existing'
+2: - prefix = "species[#{new_or_existing}_character_attributes][]"
+3: 
+4: %li
+
+    app/views/species/forms/_character.haml:1:in `_run_haml_app47views47species47forms47_character46haml_locals_character_f_object'
+    haml (2.2.17) lib/haml/helpers/action_view_mods.rb:11:in `render'
+    haml (2.2.17) lib/haml/helpers.rb:96:in `non_haml'
+    haml (2.2.17) lib/haml/helpers/action_view_mods.rb:11:in `render'
+    app/views/species/_form.haml:20:in `_run_haml_app47views47species47_form46haml_locals_form_object'
+    app/views/species/_form.haml:19:in `_run_haml_app47views47species47_form46haml_locals_form_object'
+    haml (2.2.17) lib/haml/helpers/action_view_mods.rb:164:in `call'
+    haml (2.2.17) lib/haml/helpers/action_view_mods.rb:164:in `form_for'
+    haml (2.2.17) lib/haml/helpers.rb:545:in `call'
+    haml (2.2.17) lib/haml/helpers.rb:545:in `haml_bind_proc'
+    haml (2.2.17) lib/haml/helpers/action_view_mods.rb:170:in `form_for'
+    app/views/species/_form.haml:4:in `_run_haml_app47views47species47_form46haml_locals_form_object'
+    haml (2.2.17) lib/haml/helpers/action_view_mods.rb:11:in `render'
+    haml (2.2.17) lib/haml/helpers.rb:96:in `non_haml'
+    haml (2.2.17) lib/haml/helpers/action_view_mods.rb:11:in `render'
+    app/views/species/edit.haml:2:in `_run_haml_app47views47species47edit46haml'
+    haml (2.2.17) lib/haml/helpers/action_view_mods.rb:13:in `render'
+    haml (2.2.17) lib/haml/helpers/action_view_mods.rb:13:in `render'
+    haml (2.2.17) lib/sass/plugin/rails.rb:19:in `process'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (53.8ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing SpeciesController#edit (for 127.0.0.1 at 2010-01-27 11:40:22) [GET]
+  Parameters: {"id"=>"15"}
+  [4;35;1mSpecies Load (0.1ms)[0m   [0mSELECT * FROM "species" WHERE ("species"."id" = 15) [0m
+Rendering template within layouts/application
+Rendering species/edit
+  [4;36;1mCharacter Load (0.3ms)[0m   [0;1mSELECT * FROM "characters" WHERE ("characters".species_id = 15) [0m
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+You might have expected an instance of ActiveRecord::Base.
+The error occurred while evaluating nil.new_record?) on line #1 of app/views/species/_character.haml:
+1: - new_or_existing = character.new_record? ? 'new' : 'existing'
+2: - prefix = "species[#{new_or_existing}_character_attributes][]"
+3: 
+4: %li
+
+    app/views/species/_character.haml:1:in `_run_haml_app47views47species47_character46haml_locals_character_f_object'
+    haml (2.2.17) lib/haml/helpers/action_view_mods.rb:11:in `render'
+    haml (2.2.17) lib/haml/helpers.rb:96:in `non_haml'
+    haml (2.2.17) lib/haml/helpers/action_view_mods.rb:11:in `render'
+    app/helpers/application_helper.rb:17:in `new_child_fields'
+    app/helpers/application_helper.rb:16:in `new_child_fields'
+    app/helpers/application_helper.rb:8:in `add_child_link'
+    app/views/species/_form.haml:17:in `_run_haml_app47views47species47_form46haml_locals_form_object'
+    haml (2.2.17) lib/haml/helpers/action_view_mods.rb:164:in `call'
+    haml (2.2.17) lib/haml/helpers/action_view_mods.rb:164:in `form_for'
+    haml (2.2.17) lib/haml/helpers.rb:545:in `call'
+    haml (2.2.17) lib/haml/helpers.rb:545:in `haml_bind_proc'
+    haml (2.2.17) lib/haml/helpers/action_view_mods.rb:170:in `form_for'
+    app/views/species/_form.haml:4:in `_run_haml_app47views47species47_form46haml_locals_form_object'
+    haml (2.2.17) lib/haml/helpers/action_view_mods.rb:11:in `render'
+    haml (2.2.17) lib/haml/helpers.rb:96:in `non_haml'
+    haml (2.2.17) lib/haml/helpers/action_view_mods.rb:11:in `render'
+    app/views/species/edit.haml:2:in `_run_haml_app47views47species47edit46haml'
+    haml (2.2.17) lib/haml/helpers/action_view_mods.rb:13:in `render'
+    haml (2.2.17) lib/haml/helpers/action_view_mods.rb:13:in `render'
+    haml (2.2.17) lib/sass/plugin/rails.rb:19:in `process'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (52.9ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing SpeciesController#edit (for 127.0.0.1 at 2010-01-27 11:40:34) [GET]
+  Parameters: {"id"=>"15"}
+  [4;35;1mSpecies Load (0.1ms)[0m   [0mSELECT * FROM "species" WHERE ("species"."id" = 15) [0m
+Rendering template within layouts/application
+Rendering species/edit
+
+ActionView::TemplateError (undefined method `klass' for nil:NilClass) on line #17 of app/views/species/_form.haml:
+14:   
+15:   %p
+16:     %h3 Character Traits
+17:     = add_child_link("Add a Character Trait", f, :character)
+18:     
+19:     - f.fields_for(:characters) do |characters_form|
+20:       = render(:partial => 'species/forms/character', :locals => { :f => characters_form})
+
+    app/helpers/application_helper.rb:13:in `new_child_fields'
+    app/helpers/application_helper.rb:8:in `add_child_link'
+    app/views/species/_form.haml:17:in `_run_haml_app47views47species47_form46haml_locals_form_object'
+    haml (2.2.17) lib/haml/helpers/action_view_mods.rb:164:in `call'
+    haml (2.2.17) lib/haml/helpers/action_view_mods.rb:164:in `form_for'
+    haml (2.2.17) lib/haml/helpers.rb:545:in `call'
+    haml (2.2.17) lib/haml/helpers.rb:545:in `haml_bind_proc'
+    haml (2.2.17) lib/haml/helpers/action_view_mods.rb:170:in `form_for'
+    app/views/species/_form.haml:4:in `_run_haml_app47views47species47_form46haml_locals_form_object'
+    haml (2.2.17) lib/haml/helpers/action_view_mods.rb:11:in `render'
+    haml (2.2.17) lib/haml/helpers.rb:96:in `non_haml'
+    haml (2.2.17) lib/haml/helpers/action_view_mods.rb:11:in `render'
+    app/views/species/edit.haml:2:in `_run_haml_app47views47species47edit46haml'
+    haml (2.2.17) lib/haml/helpers/action_view_mods.rb:13:in `render'
+    haml (2.2.17) lib/haml/helpers/action_view_mods.rb:13:in `render'
+    haml (2.2.17) lib/sass/plugin/rails.rb:19:in `process'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (41.7ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing SpeciesController#edit (for 127.0.0.1 at 2010-01-27 11:40:41) [GET]
+  Parameters: {"id"=>"15"}
+  [4;36;1mSpecies Load (0.1ms)[0m   [0;1mSELECT * FROM "species" WHERE ("species"."id" = 15) [0m
+Rendering template within layouts/application
+Rendering species/edit
+  [4;35;1mCharacter Load (0.2ms)[0m   [0mSELECT * FROM "characters" WHERE ("characters".species_id = 15) [0m
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+You might have expected an instance of ActiveRecord::Base.
+The error occurred while evaluating nil.new_record?) on line #1 of app/views/species/_character.haml:
+1: - new_or_existing = character.new_record? ? 'new' : 'existing'
+2: - prefix = "species[#{new_or_existing}_character_attributes][]"
+3: 
+4: %li
+
+    app/views/species/_character.haml:1:in `_run_haml_app47views47species47_character46haml_locals_character_f_object'
+    haml (2.2.17) lib/haml/helpers/action_view_mods.rb:11:in `render'
+    haml (2.2.17) lib/haml/helpers.rb:96:in `non_haml'
+    haml (2.2.17) lib/haml/helpers/action_view_mods.rb:11:in `render'
+    app/helpers/application_helper.rb:17:in `new_child_fields'
+    app/helpers/application_helper.rb:16:in `new_child_fields'
+    app/helpers/application_helper.rb:8:in `add_child_link'
+    app/views/species/_form.haml:17:in `_run_haml_app47views47species47_form46haml_locals_form_object'
+    haml (2.2.17) lib/haml/helpers/action_view_mods.rb:164:in `call'
+    haml (2.2.17) lib/haml/helpers/action_view_mods.rb:164:in `form_for'
+    haml (2.2.17) lib/haml/helpers.rb:545:in `call'
+    haml (2.2.17) lib/haml/helpers.rb:545:in `haml_bind_proc'
+    haml (2.2.17) lib/haml/helpers/action_view_mods.rb:170:in `form_for'
+    app/views/species/_form.haml:4:in `_run_haml_app47views47species47_form46haml_locals_form_object'
+    haml (2.2.17) lib/haml/helpers/action_view_mods.rb:11:in `render'
+    haml (2.2.17) lib/haml/helpers.rb:96:in `non_haml'
+    haml (2.2.17) lib/haml/helpers/action_view_mods.rb:11:in `render'
+    app/views/species/edit.haml:2:in `_run_haml_app47views47species47edit46haml'
+    haml (2.2.17) lib/haml/helpers/action_view_mods.rb:13:in `render'
+    haml (2.2.17) lib/haml/helpers/action_view_mods.rb:13:in `render'
+    haml (2.2.17) lib/sass/plugin/rails.rb:19:in `process'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (115.5ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing SpeciesController#edit (for 127.0.0.1 at 2010-01-27 11:42:03) [GET]
+  Parameters: {"id"=>"15"}
+  [4;36;1mSpecies Load (0.1ms)[0m   [0;1mSELECT * FROM "species" WHERE ("species"."id" = 15) [0m
+Rendering template within layouts/application
+Rendering species/edit
+  [4;35;1mCharacter Load (0.2ms)[0m   [0mSELECT * FROM "characters" WHERE ("characters".species_id = 15) [0m
+DEPRECATION WARNING: _delete is deprecated in nested attributes. Use _destroy instead.. (called from _delete at /Users/bryce/.gems/gems/activerecord-2.3.5/lib/active_record/nested_attributes.rb:263)
+Rendered species/_character (4.8ms)
+
+ActionView::TemplateError (Missing template species/forms/_character.erb in view path app/views) on line #20 of app/views/species/_form.haml:
+17:     = add_child_link("Add a Character Trait", f, :characters)
+18:     
+19:     - f.fields_for(:characters) do |characters_form|
+20:       = render(:partial => 'species/forms/character', :locals => { :f => characters_form})
+21:     %ul#characters
+22: 
+23:   = f.submit "Submit"
+
+    haml (2.2.17) lib/haml/helpers/action_view_mods.rb:11:in `render'
+    haml (2.2.17) lib/haml/helpers.rb:96:in `non_haml'
+    haml (2.2.17) lib/haml/helpers/action_view_mods.rb:11:in `render'
+    app/views/species/_form.haml:20:in `_run_haml_app47views47species47_form46haml_locals_form_object'
+    app/views/species/_form.haml:19:in `_run_haml_app47views47species47_form46haml_locals_form_object'
+    haml (2.2.17) lib/haml/helpers/action_view_mods.rb:164:in `call'
+    haml (2.2.17) lib/haml/helpers/action_view_mods.rb:164:in `form_for'
+    haml (2.2.17) lib/haml/helpers.rb:545:in `call'
+    haml (2.2.17) lib/haml/helpers.rb:545:in `haml_bind_proc'
+    haml (2.2.17) lib/haml/helpers/action_view_mods.rb:170:in `form_for'
+    app/views/species/_form.haml:4:in `_run_haml_app47views47species47_form46haml_locals_form_object'
+    haml (2.2.17) lib/haml/helpers/action_view_mods.rb:11:in `render'
+    haml (2.2.17) lib/haml/helpers.rb:96:in `non_haml'
+    haml (2.2.17) lib/haml/helpers/action_view_mods.rb:11:in `render'
+    app/views/species/edit.haml:2:in `_run_haml_app47views47species47edit46haml'
+    haml (2.2.17) lib/haml/helpers/action_view_mods.rb:13:in `render'
+    haml (2.2.17) lib/haml/helpers/action_view_mods.rb:13:in `render'
+    haml (2.2.17) lib/sass/plugin/rails.rb:19:in `process'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (115.5ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing SpeciesController#edit (for 127.0.0.1 at 2010-01-27 11:42:25) [GET]
+  Parameters: {"id"=>"15"}
+  [4;36;1mSpecies Load (0.2ms)[0m   [0;1mSELECT * FROM "species" WHERE ("species"."id" = 15) [0m
+Rendering template within layouts/application
+Rendering species/edit
+  [4;35;1mCharacter Load (0.3ms)[0m   [0mSELECT * FROM "characters" WHERE ("characters".species_id = 15) [0m
+DEPRECATION WARNING: _delete is deprecated in nested attributes. Use _destroy instead.. (called from _delete at /Users/bryce/.gems/gems/activerecord-2.3.5/lib/active_record/nested_attributes.rb:263)
+Rendered species/_character (4.7ms)
+DEPRECATION WARNING: _delete is deprecated in nested attributes. Use _destroy instead.. (called from _delete at /Users/bryce/.gems/gems/activerecord-2.3.5/lib/active_record/nested_attributes.rb:263)
+Rendered species/_character (2.3ms)
+Rendered species/_form (19.0ms)
+Completed in 27ms (View: 23, DB: 0) | 200 OK [http://localhost/species/15/edit]
+
+
+Processing SpeciesController#update to #<species:0x1033634f0> (for 127.0.0.1 at 2010-01-27 11:42:36) [PUT]
+  Parameters: {"commit"=>"Submit", "authenticity_token"=>"ROy/pJd2xzRff5AEaC984v1qKDmMMqhXTdl84MVXAis=", "id"=>"species", "species"=>{"characters_attributes"=>{"0"=>{"name"=>"Width", "_delete"=>"", "id"=>"7", "unit"=>"m", "value"=>"1.829"}}, "scientific_name"=>"Homo sapiens"}}
+  [4;36;1mSpecies Load (0.1ms)[0m   [0;1mSELECT * FROM "species" WHERE ("species"."id" = 0) [0m
+
+ActiveRecord::RecordNotFound (Couldn't find Species with ID=species):
+  app/controllers/species_controller.rb:30:in `update'
+  haml (2.2.17) lib/sass/plugin/rails.rb:19:in `process'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (25.5ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (not_found)
+
+
+Processing SpeciesController#edit (for 127.0.0.1 at 2010-01-27 11:43:15) [GET]
+  Parameters: {"id"=>"15"}
+  [4;35;1mSpecies Load (0.1ms)[0m   [0mSELECT * FROM "species" WHERE ("species"."id" = 15) [0m
+Rendering template within layouts/application
+Rendering species/edit
+  [4;36;1mCharacter Load (0.2ms)[0m   [0;1mSELECT * FROM "characters" WHERE ("characters".species_id = 15) [0m
+DEPRECATION WARNING: _delete is deprecated in nested attributes. Use _destroy instead.. (called from _delete at /Users/bryce/.gems/gems/activerecord-2.3.5/lib/active_record/nested_attributes.rb:263)
+Rendered species/_character (3.6ms)
+DEPRECATION WARNING: _delete is deprecated in nested attributes. Use _destroy instead.. (called from _delete at /Users/bryce/.gems/gems/activerecord-2.3.5/lib/active_record/nested_attributes.rb:263)
+Rendered species/_character (2.9ms)
+Rendered species/_form (13.1ms)
+Completed in 19ms (View: 15, DB: 0) | 200 OK [http://localhost/species/15/edit]
+
+
+Processing SpeciesController#show (for 127.0.0.1 at 2010-01-27 11:43:24) [GET]
+  Parameters: {"id"=>"create"}
+  [4;35;1mSpecies Load (0.1ms)[0m   [0mSELECT * FROM "species" WHERE ("species"."id" = 0) [0m
+
+ActiveRecord::RecordNotFound (Couldn't find Species with ID=create):
+  app/controllers/species_controller.rb:7:in `show'
+  haml (2.2.17) lib/sass/plugin/rails.rb:19:in `process'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (86.5ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (not_found)
+
+
+Processing SpeciesController#index (for 127.0.0.1 at 2010-01-27 11:43:26) [GET]
+  [4;36;1mSpecies Load (0.4ms)[0m   [0;1mSELECT * FROM "species" [0m
+Rendering template within layouts/application
+Rendering species/index
+Completed in 7ms (View: 3, DB: 0) | 200 OK [http://localhost/species/]
+
+
+Processing SpeciesController#edit (for 127.0.0.1 at 2010-01-27 11:43:28) [GET]
+  Parameters: {"id"=>"15"}
+  [4;35;1mSpecies Load (0.2ms)[0m   [0mSELECT * FROM "species" WHERE ("species"."id" = 15) [0m
+Rendering template within layouts/application
+Rendering species/edit
+  [4;36;1mCharacter Load (0.2ms)[0m   [0;1mSELECT * FROM "characters" WHERE ("characters".species_id = 15) [0m
+DEPRECATION WARNING: _delete is deprecated in nested attributes. Use _destroy instead.. (called from _delete at /Users/bryce/.gems/gems/activerecord-2.3.5/lib/active_record/nested_attributes.rb:263)
+Rendered species/_character (3.4ms)
+DEPRECATION WARNING: _delete is deprecated in nested attributes. Use _destroy instead.. (called from _delete at /Users/bryce/.gems/gems/activerecord-2.3.5/lib/active_record/nested_attributes.rb:263)
+Rendered species/_character (2.1ms)
+Rendered species/_form (12.7ms)
+Completed in 19ms (View: 14, DB: 0) | 200 OK [http://localhost/species/15/edit]
+
+
+Processing SpeciesController#edit (for 127.0.0.1 at 2010-01-27 11:45:33) [GET]
+  Parameters: {"id"=>"15"}
+  [4;35;1mSpecies Load (0.1ms)[0m   [0mSELECT * FROM "species" WHERE ("species"."id" = 15) [0m
+Rendering template within layouts/application
+Rendering species/edit
+  [4;36;1mCharacter Load (0.2ms)[0m   [0;1mSELECT * FROM "characters" WHERE ("characters".species_id = 15) [0m
+DEPRECATION WARNING: _delete is deprecated in nested attributes. Use _destroy instead.. (called from _delete at /Users/bryce/.gems/gems/activerecord-2.3.5/lib/active_record/nested_attributes.rb:263)
+Rendered species/_character (3.3ms)
+DEPRECATION WARNING: _delete is deprecated in nested attributes. Use _destroy instead.. (called from _delete at /Users/bryce/.gems/gems/activerecord-2.3.5/lib/active_record/nested_attributes.rb:263)
+Rendered species/_character (2.2ms)
+Rendered species/_form (14.1ms)
+Completed in 24ms (View: 19, DB: 0) | 200 OK [http://localhost/species/15/edit]
+
+
+Processing SpeciesController#edit (for 127.0.0.1 at 2010-01-27 11:45:40) [GET]
+  Parameters: {"id"=>"15"}
+  [4;35;1mSpecies Load (0.2ms)[0m   [0mSELECT * FROM "species" WHERE ("species"."id" = 15) [0m
+Rendering template within layouts/application
+Rendering species/edit
+  [4;36;1mCharacter Load (0.2ms)[0m   [0;1mSELECT * FROM "characters" WHERE ("characters".species_id = 15) [0m
+DEPRECATION WARNING: _delete is deprecated in nested attributes. Use _destroy instead.. (called from _delete at /Users/bryce/.gems/gems/activerecord-2.3.5/lib/active_record/nested_attributes.rb:263)
+Rendered species/_character (3.4ms)
+DEPRECATION WARNING: _delete is deprecated in nested attributes. Use _destroy instead.. (called from _delete at /Users/bryce/.gems/gems/activerecord-2.3.5/lib/active_record/nested_attributes.rb:263)
+Rendered species/_character (2.2ms)
+Rendered species/_form (13.5ms)
+Completed in 20ms (View: 15, DB: 0) | 200 OK [http://localhost/species/15/edit]
+
+
+Processing SpeciesController#edit (for 127.0.0.1 at 2010-01-27 11:45:53) [GET]
+  Parameters: {"id"=>"15"}
+  [4;35;1mSpecies Load (0.1ms)[0m   [0mSELECT * FROM "species" WHERE ("species"."id" = 15) [0m
+Rendering template within layouts/application
+Rendering species/edit
+  [4;36;1mCharacter Load (0.2ms)[0m   [0;1mSELECT * FROM "characters" WHERE ("characters".species_id = 15) [0m
+DEPRECATION WARNING: _delete is deprecated in nested attributes. Use _destroy instead.. (called from _delete at /Users/bryce/.gems/gems/activerecord-2.3.5/lib/active_record/nested_attributes.rb:263)
+Rendered species/_character (3.4ms)
+DEPRECATION WARNING: _delete is deprecated in nested attributes. Use _destroy instead.. (called from _delete at /Users/bryce/.gems/gems/activerecord-2.3.5/lib/active_record/nested_attributes.rb:263)
+Rendered species/_character (2.2ms)
+Rendered species/_form (14.1ms)
+Completed in 23ms (View: 18, DB: 0) | 200 OK [http://localhost/species/15/edit]
+
+
+Processing SpeciesController#edit (for 127.0.0.1 at 2010-01-27 11:46:03) [GET]
+  Parameters: {"id"=>"15"}
+  [4;35;1mSpecies Load (0.2ms)[0m   [0mSELECT * FROM "species" WHERE ("species"."id" = 15) [0m
+Rendering template within layouts/application
+Rendering species/edit
+  [4;36;1mCharacter Load (0.2ms)[0m   [0;1mSELECT * FROM "characters" WHERE ("characters".species_id = 15) [0m
+DEPRECATION WARNING: _delete is deprecated in nested attributes. Use _destroy instead.. (called from _delete at /Users/bryce/.gems/gems/activerecord-2.3.5/lib/active_record/nested_attributes.rb:263)
+Rendered species/_character (3.4ms)
+DEPRECATION WARNING: _delete is deprecated in nested attributes. Use _destroy instead.. (called from _delete at /Users/bryce/.gems/gems/activerecord-2.3.5/lib/active_record/nested_attributes.rb:263)
+Rendered species/_character (2.2ms)
+Rendered species/_form (15.8ms)
+Completed in 82ms (View: 77, DB: 0) | 200 OK [http://localhost/species/15/edit]
+
+
+Processing SpeciesController#edit (for 127.0.0.1 at 2010-01-27 11:46:12) [GET]
+  Parameters: {"id"=>"15"}
+  [4;35;1mSpecies Load (0.1ms)[0m   [0mSELECT * FROM "species" WHERE ("species"."id" = 15) [0m
+Rendering template within layouts/application
+Rendering species/edit
+  [4;36;1mCharacter Load (0.2ms)[0m   [0;1mSELECT * FROM "characters" WHERE ("characters".species_id = 15) [0m
+DEPRECATION WARNING: _delete is deprecated in nested attributes. Use _destroy instead.. (called from _delete at /Users/bryce/.gems/gems/activerecord-2.3.5/lib/active_record/nested_attributes.rb:263)
+Rendered species/_character (3.4ms)
+DEPRECATION WARNING: _delete is deprecated in nested attributes. Use _destroy instead.. (called from _delete at /Users/bryce/.gems/gems/activerecord-2.3.5/lib/active_record/nested_attributes.rb:263)
+Rendered species/_character (2.2ms)
+Rendered species/_form (14.3ms)
+Completed in 23ms (View: 19, DB: 0) | 200 OK [http://localhost/species/15/edit]
+
+
+Processing SpeciesController#edit (for 127.0.0.1 at 2010-01-27 11:47:03) [GET]
+  Parameters: {"id"=>"15"}
+  [4;35;1mSpecies Load (0.1ms)[0m   [0mSELECT * FROM "species" WHERE ("species"."id" = 15) [0m
+Rendering template within layouts/application
+Rendering species/edit
+  [4;36;1mCharacter Load (0.2ms)[0m   [0;1mSELECT * FROM "characters" WHERE ("characters".species_id = 15) [0m
+DEPRECATION WARNING: _delete is deprecated in nested attributes. Use _destroy instead.. (called from _delete at /Users/bryce/.gems/gems/activerecord-2.3.5/lib/active_record/nested_attributes.rb:263)
+Rendered species/_character (61.3ms)
+DEPRECATION WARNING: _delete is deprecated in nested attributes. Use _destroy instead.. (called from _delete at /Users/bryce/.gems/gems/activerecord-2.3.5/lib/active_record/nested_attributes.rb:263)
+Rendered species/_character (2.3ms)
+Rendered species/_form (70.7ms)
+Completed in 80ms (View: 75, DB: 0) | 200 OK [http://localhost/species/15/edit]
+
+
+Processing SpeciesController#edit (for 127.0.0.1 at 2010-01-27 11:47:10) [GET]
+  Parameters: {"id"=>"15"}
+  [4;35;1mSpecies Load (0.1ms)[0m   [0mSELECT * FROM "species" WHERE ("species"."id" = 15) [0m
+Rendering template within layouts/application
+Rendering species/edit
+  [4;36;1mCharacter Load (0.2ms)[0m   [0;1mSELECT * FROM "characters" WHERE ("characters".species_id = 15) [0m
+DEPRECATION WARNING: _delete is deprecated in nested attributes. Use _destroy instead.. (called from _delete at /Users/bryce/.gems/gems/activerecord-2.3.5/lib/active_record/nested_attributes.rb:263)
+Rendered species/_character (3.4ms)
+DEPRECATION WARNING: _delete is deprecated in nested attributes. Use _destroy instead.. (called from _delete at /Users/bryce/.gems/gems/activerecord-2.3.5/lib/active_record/nested_attributes.rb:263)
+Rendered species/_character (2.2ms)
+Rendered species/_form (13.7ms)
+Completed in 23ms (View: 18, DB: 0) | 200 OK [http://localhost/species/15/edit]
+
+
+Processing SpeciesController#edit (for 127.0.0.1 at 2010-01-27 11:47:21) [GET]
+  Parameters: {"id"=>"15"}
+  [4;35;1mSpecies Load (0.1ms)[0m   [0mSELECT * FROM "species" WHERE ("species"."id" = 15) [0m
+Rendering template within layouts/application
+Rendering species/edit
+  [4;36;1mCharacter Load (0.2ms)[0m   [0;1mSELECT * FROM "characters" WHERE ("characters".species_id = 15) [0m
+DEPRECATION WARNING: _delete is deprecated in nested attributes. Use _destroy instead.. (called from _delete at /Users/bryce/.gems/gems/activerecord-2.3.5/lib/active_record/nested_attributes.rb:263)
+Rendered species/_character (3.7ms)
+DEPRECATION WARNING: _delete is deprecated in nested attributes. Use _destroy instead.. (called from _delete at /Users/bryce/.gems/gems/activerecord-2.3.5/lib/active_record/nested_attributes.rb:263)
+Rendered species/_character (2.2ms)
+Rendered species/_form (12.5ms)
+Completed in 22ms (View: 18, DB: 0) | 200 OK [http://localhost/species/15/edit]
+
+
+Processing SpeciesController#15 (for 127.0.0.1 at 2010-01-27 11:47:27) [POST]
+  Parameters: {"commit"=>"Submit", "authenticity_token"=>"kQED3Z/0zZ6VHSdwiFu1u6NPMPFLFq8MEDJZt3g4j9o=", "species"=>{"characters_attributes"=>{"0"=>{"name"=>"Height", "_delete"=>"", "id"=>"7", "unit"=>"m", "value"=>"1.829"}}, "scientific_name"=>"Homo sapiens"}}
+
+ActionController::UnknownAction (No action responded to 15. Actions: create, destroy, edit, index, new, show, and update):
+  haml (2.2.17) lib/sass/plugin/rails.rb:19:in `process'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing SpeciesController#show (for 127.0.0.1 at 2010-01-27 11:47:37) [GET]
+  Parameters: {"id"=>"15"}
+  [4;35;1mSpecies Load (0.1ms)[0m   [0mSELECT * FROM "species" WHERE ("species"."id" = 15) [0m
+Rendering template within layouts/application
+Rendering species/show
+  [4;36;1mCharacter Load (0.2ms)[0m   [0;1mSELECT * FROM "characters" WHERE ("characters".species_id = 15) [0m
+
+ActionView::TemplateError (undefined local variable or method `f' for #<ActionView::Base:0x10351ab90>) on line #1 of app/views/species/_character.haml:
+1: = f.label(:name)
+2: = f.text_field(:name, :size => "25")
+3: 
+4: = f.label(:value)
+
+    app/views/species/_character.haml:1:in `_run_haml_app47views47species47_character46haml_locals_character_character_counter_object'
+    haml (2.2.17) lib/haml/helpers/action_view_mods.rb:11:in `render'
+    haml (2.2.17) lib/haml/helpers.rb:96:in `non_haml'
+    haml (2.2.17) lib/haml/helpers/action_view_mods.rb:11:in `render'
+    app/views/species/show.haml:11:in `_run_haml_app47views47species47show46haml'
+    haml (2.2.17) lib/haml/helpers/action_view_mods.rb:13:in `render'
+    haml (2.2.17) lib/haml/helpers/action_view_mods.rb:13:in `render'
+    haml (2.2.17) lib/sass/plugin/rails.rb:19:in `process'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (40.7ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing SpeciesController#show (for 127.0.0.1 at 2010-01-27 11:47:40) [GET]
+  Parameters: {"id"=>"15"}
+  [4;35;1mSpecies Load (0.2ms)[0m   [0mSELECT * FROM "species" WHERE ("species"."id" = 15) [0m
+Rendering template within layouts/application
+Rendering species/show
+  [4;36;1mCharacter Load (0.3ms)[0m   [0;1mSELECT * FROM "characters" WHERE ("characters".species_id = 15) [0m
+
+ActionView::TemplateError (undefined local variable or method `f' for #<ActionView::Base:0x1030da378>) on line #1 of app/views/species/_character.haml:
+1: = f.label(:name)
+2: = f.text_field(:name, :size => "25")
+3: 
+4: = f.label(:value)
+
+    app/views/species/_character.haml:1:in `_run_haml_app47views47species47_character46haml_locals_character_character_counter_object'
+    haml (2.2.17) lib/haml/helpers/action_view_mods.rb:11:in `render'
+    haml (2.2.17) lib/haml/helpers.rb:96:in `non_haml'
+    haml (2.2.17) lib/haml/helpers/action_view_mods.rb:11:in `render'
+    app/views/species/show.haml:11:in `_run_haml_app47views47species47show46haml'
+    haml (2.2.17) lib/haml/helpers/action_view_mods.rb:13:in `render'
+    haml (2.2.17) lib/haml/helpers/action_view_mods.rb:13:in `render'
+    haml (2.2.17) lib/sass/plugin/rails.rb:19:in `process'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (40.4ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing SpeciesController#show (for 127.0.0.1 at 2010-01-27 11:47:53) [GET]
+  Parameters: {"id"=>"15"}
+  [4;35;1mSpecies Load (0.1ms)[0m   [0mSELECT * FROM "species" WHERE ("species"."id" = 15) [0m
+Rendering template within layouts/application
+Rendering species/show
+  [4;36;1mCharacter Load (0.3ms)[0m   [0;1mSELECT * FROM "characters" WHERE ("characters".species_id = 15) [0m
+
+ActionView::TemplateError (undefined local variable or method `character' for #<ActionView::Base:0x103230290>) on line #2 of app/views/species/_character_line.haml:
+1: %li
+2:   = "Name: `#{character.name}`"
+3:   = "Value: `#{character.value}`"
+4:   = "Unit: `#{character.unit}`"
+
+    app/views/species/_character_line.haml:2:in `_run_haml_app47views47species47_character_line46haml_locals_character_line_character_line_counter_object'
+    haml (2.2.17) lib/haml/helpers/action_view_mods.rb:11:in `render'
+    haml (2.2.17) lib/haml/helpers.rb:96:in `non_haml'
+    haml (2.2.17) lib/haml/helpers/action_view_mods.rb:11:in `render'
+    app/views/species/show.haml:11:in `_run_haml_app47views47species47show46haml'
+    haml (2.2.17) lib/haml/helpers/action_view_mods.rb:13:in `render'
+    haml (2.2.17) lib/haml/helpers/action_view_mods.rb:13:in `render'
+    haml (2.2.17) lib/sass/plugin/rails.rb:19:in `process'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (42.2ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing SpeciesController#show (for 127.0.0.1 at 2010-01-27 11:48:13) [GET]
+  Parameters: {"id"=>"15"}
+  [4;35;1mSpecies Load (0.1ms)[0m   [0mSELECT * FROM "species" WHERE ("species"."id" = 15) [0m
+Rendering template within layouts/application
+Rendering species/show
+  [4;36;1mCharacter Load (0.3ms)[0m   [0;1mSELECT * FROM "characters" WHERE ("characters".species_id = 15) [0m
+Rendered species/_character_line (0.8ms)
+Completed in 14ms (View: 10, DB: 0) | 200 OK [http://localhost/species/15]
+
+
+Processing SpeciesController#edit (for 127.0.0.1 at 2010-01-27 11:48:16) [GET]
+  Parameters: {"id"=>"15"}
+  [4;35;1mSpecies Load (0.1ms)[0m   [0mSELECT * FROM "species" WHERE ("species"."id" = 15) [0m
+Rendering template within layouts/application
+Rendering species/edit
+  [4;36;1mCharacter Load (0.3ms)[0m   [0;1mSELECT * FROM "characters" WHERE ("characters".species_id = 15) [0m
+DEPRECATION WARNING: _delete is deprecated in nested attributes. Use _destroy instead.. (called from _delete at /Users/bryce/.gems/gems/activerecord-2.3.5/lib/active_record/nested_attributes.rb:263)
+Rendered species/_character (3.9ms)
+DEPRECATION WARNING: _delete is deprecated in nested attributes. Use _destroy instead.. (called from _delete at /Users/bryce/.gems/gems/activerecord-2.3.5/lib/active_record/nested_attributes.rb:263)
+Rendered species/_character (2.2ms)
+Rendered species/_form (73.9ms)
+Completed in 81ms (View: 76, DB: 0) | 200 OK [http://localhost/species/15/edit]
+
+
+Processing SpeciesController#edit (for 127.0.0.1 at 2010-01-27 11:48:56) [GET]
+  Parameters: {"id"=>"15"}
+  [4;35;1mSpecies Load (0.2ms)[0m   [0mSELECT * FROM "species" WHERE ("species"."id" = 15) [0m
+Rendering template within layouts/application
+Rendering species/edit
+  [4;36;1mCharacter Load (0.2ms)[0m   [0;1mSELECT * FROM "characters" WHERE ("characters".species_id = 15) [0m
+DEPRECATION WARNING: _delete is deprecated in nested attributes. Use _destroy instead.. (called from _delete at /Users/bryce/.gems/gems/activerecord-2.3.5/lib/active_record/nested_attributes.rb:263)
+Rendered species/_character (3.4ms)
+DEPRECATION WARNING: _delete is deprecated in nested attributes. Use _destroy instead.. (called from _delete at /Users/bryce/.gems/gems/activerecord-2.3.5/lib/active_record/nested_attributes.rb:263)
+Rendered species/_character (2.3ms)
+Rendered species/_form (14.4ms)
+Completed in 27ms (View: 19, DB: 0) | 200 OK [http://localhost/species/15/edit]
+
+
+Processing SpeciesController#edit (for 127.0.0.1 at 2010-01-27 11:49:09) [GET]
+  Parameters: {"id"=>"15"}
+  [4;35;1mSpecies Load (0.1ms)[0m   [0mSELECT * FROM "species" WHERE ("species"."id" = 15) [0m
+Rendering template within layouts/application
+Rendering species/edit
+  [4;36;1mCharacter Load (0.2ms)[0m   [0;1mSELECT * FROM "characters" WHERE ("characters".species_id = 15) [0m
+DEPRECATION WARNING: _delete is deprecated in nested attributes. Use _destroy instead.. (called from _delete at /Users/bryce/.gems/gems/activerecord-2.3.5/lib/active_record/nested_attributes.rb:263)
+Rendered species/_character (3.7ms)
+DEPRECATION WARNING: _delete is deprecated in nested attributes. Use _destroy instead.. (called from _delete at /Users/bryce/.gems/gems/activerecord-2.3.5/lib/active_record/nested_attributes.rb:263)
+Rendered species/_character (2.3ms)
+Rendered species/_form (14.6ms)
+Completed in 23ms (View: 19, DB: 0) | 200 OK [http://localhost/species/15/edit]
+
+
+Processing SpeciesController#edit (for 127.0.0.1 at 2010-01-27 11:49:44) [GET]
+  Parameters: {"id"=>"15"}
+  [4;35;1mSpecies Load (0.2ms)[0m   [0mSELECT * FROM "species" WHERE ("species"."id" = 15) [0m
+Rendering template within layouts/application
+Rendering species/edit
+  [4;36;1mCharacter Load (0.2ms)[0m   [0;1mSELECT * FROM "characters" WHERE ("characters".species_id = 15) [0m
+DEPRECATION WARNING: _delete is deprecated in nested attributes. Use _destroy instead.. (called from _delete at /Users/bryce/.gems/gems/activerecord-2.3.5/lib/active_record/nested_attributes.rb:263)
+Rendered species/_character (3.5ms)
+DEPRECATION WARNING: _delete is deprecated in nested attributes. Use _destroy instead.. (called from _delete at /Users/bryce/.gems/gems/activerecord-2.3.5/lib/active_record/nested_attributes.rb:263)
+Rendered species/_character (2.2ms)
+Rendered species/_form (15.1ms)
+Completed in 24ms (View: 19, DB: 0) | 200 OK [http://localhost/species/15/edit]
+
+
+Processing SpeciesController#edit (for 127.0.0.1 at 2010-01-27 11:49:56) [GET]
+  Parameters: {"id"=>"15"}
+  [4;35;1mSpecies Load (0.1ms)[0m   [0mSELECT * FROM "species" WHERE ("species"."id" = 15) [0m
+Rendering template within layouts/application
+Rendering species/edit
+  [4;36;1mCharacter Load (0.2ms)[0m   [0;1mSELECT * FROM "characters" WHERE ("characters".species_id = 15) [0m
+DEPRECATION WARNING: _delete is deprecated in nested attributes. Use _destroy instead.. (called from _delete at /Users/bryce/.gems/gems/activerecord-2.3.5/lib/active_record/nested_attributes.rb:263)
+Rendered species/_character (3.7ms)
+DEPRECATION WARNING: _delete is deprecated in nested attributes. Use _destroy instead.. (called from _delete at /Users/bryce/.gems/gems/activerecord-2.3.5/lib/active_record/nested_attributes.rb:263)
+Rendered species/_character (2.7ms)
+Rendered species/_form (14.5ms)
+Completed in 23ms (View: 19, DB: 0) | 200 OK [http://localhost/species/15/edit]
+
+
+Processing SpeciesController#edit (for 127.0.0.1 at 2010-01-27 11:50:23) [GET]
+  Parameters: {"id"=>"15"}
+  [4;35;1mSpecies Load (0.1ms)[0m   [0mSELECT * FROM "species" WHERE ("species"."id" = 15) [0m
+Rendering template within layouts/application
+Rendering species/edit
+  [4;36;1mCharacter Load (0.2ms)[0m   [0;1mSELECT * FROM "characters" WHERE ("characters".species_id = 15) [0m
+DEPRECATION WARNING: _delete is deprecated in nested attributes. Use _destroy instead.. (called from _delete at /Users/bryce/.gems/gems/activerecord-2.3.5/lib/active_record/nested_attributes.rb:263)
+Rendered species/_character (3.4ms)
+DEPRECATION WARNING: _delete is deprecated in nested attributes. Use _destroy instead.. (called from _delete at /Users/bryce/.gems/gems/activerecord-2.3.5/lib/active_record/nested_attributes.rb:263)
+Rendered species/_character (2.2ms)
+Rendered species/_form (14.9ms)
+Completed in 83ms (View: 79, DB: 0) | 200 OK [http://localhost/species/15/edit]
+
+
+Processing SpeciesController#edit (for 127.0.0.1 at 2010-01-27 11:50:44) [GET]
+  Parameters: {"id"=>"15"}
+  [4;35;1mSpecies Load (0.2ms)[0m   [0mSELECT * FROM "species" WHERE ("species"."id" = 15) [0m
+Rendering template within layouts/application
+Rendering species/edit
+  [4;36;1mCharacter Load (0.2ms)[0m   [0;1mSELECT * FROM "characters" WHERE ("characters".species_id = 15) [0m
+DEPRECATION WARNING: _delete is deprecated in nested attributes. Use _destroy instead.. (called from _delete at /Users/bryce/.gems/gems/activerecord-2.3.5/lib/active_record/nested_attributes.rb:263)
+Rendered species/_character (3.6ms)
+DEPRECATION WARNING: _delete is deprecated in nested attributes. Use _destroy instead.. (called from _delete at /Users/bryce/.gems/gems/activerecord-2.3.5/lib/active_record/nested_attributes.rb:263)
+Rendered species/_character (2.2ms)
+Rendered species/_form (13.6ms)
+Completed in 24ms (View: 19, DB: 0) | 200 OK [http://localhost/species/15/edit]
+
+
+Processing SpeciesController#update (for 127.0.0.1 at 2010-01-27 11:50:45) [PUT]
+  Parameters: {"commit"=>"Submit", "authenticity_token"=>"kQED3Z/0zZ6VHSdwiFu1u6NPMPFLFq8MEDJZt3g4j9o=", "id"=>"15", "species"=>{"characters_attributes"=>{"0"=>{"name"=>"Height", "_delete"=>"", "id"=>"7", "unit"=>"m", "value"=>"1.829"}}, "scientific_name"=>"Homo sapiens"}}
+  [4;35;1mSpecies Load (0.1ms)[0m   [0mSELECT * FROM "species" WHERE ("species"."id" = 15) [0m
+  [4;36;1mCharacter Load (0.2ms)[0m   [0;1mSELECT * FROM "characters" WHERE ("characters".species_id = 15) [0m
+Redirected to http://localhost:3000/species.%23%3Cspecies:0x10330d1e0%3E
+Completed in 13ms (DB: 0) | 302 Found [http://localhost/species/15]
+
+
+Processing SpeciesController#index to #<species:0x10330d1e0> (for 127.0.0.1 at 2010-01-27 11:50:45) [GET]
+  [4;35;1mSpecies Load (0.4ms)[0m   [0mSELECT * FROM "species" [0m
+Rendering template within layouts/application
+Rendering species/index
+Completed in 7ms (View: 3, DB: 0) | 200 OK [http://localhost/species.%23%3Cspecies:0x10330d1e0%3E]
+
+
+Processing SpeciesController#edit (for 127.0.0.1 at 2010-01-27 11:50:47) [GET]
+  Parameters: {"id"=>"15"}
+  [4;36;1mSpecies Load (0.1ms)[0m   [0;1mSELECT * FROM "species" WHERE ("species"."id" = 15) [0m
+Rendering template within layouts/application
+Rendering species/edit
+  [4;35;1mCharacter Load (0.2ms)[0m   [0mSELECT * FROM "characters" WHERE ("characters".species_id = 15) [0m
+DEPRECATION WARNING: _delete is deprecated in nested attributes. Use _destroy instead.. (called from _delete at /Users/bryce/.gems/gems/activerecord-2.3.5/lib/active_record/nested_attributes.rb:263)
+Rendered species/_character (3.9ms)
+DEPRECATION WARNING: _delete is deprecated in nested attributes. Use _destroy instead.. (called from _delete at /Users/bryce/.gems/gems/activerecord-2.3.5/lib/active_record/nested_attributes.rb:263)
+Rendered species/_character (2.2ms)
+Rendered species/_form (12.8ms)
+Completed in 19ms (View: 15, DB: 0) | 200 OK [http://localhost/species/15/edit]
+
+
+Processing SpeciesController#update (for 127.0.0.1 at 2010-01-27 11:50:49) [PUT]
+  Parameters: {"commit"=>"Submit", "authenticity_token"=>"kQED3Z/0zZ6VHSdwiFu1u6NPMPFLFq8MEDJZt3g4j9o=", "id"=>"15", "species"=>{"characters_attributes"=>{"0"=>{"name"=>"Width", "_delete"=>"", "id"=>"7", "unit"=>"m", "value"=>"1.829"}}, "scientific_name"=>"Homo sapiens"}}
+  [4;36;1mSpecies Load (0.2ms)[0m   [0;1mSELECT * FROM "species" WHERE ("species"."id" = 15) [0m
+  [4;35;1mCharacter Load (0.2ms)[0m   [0mSELECT * FROM "characters" WHERE ("characters".species_id = 15) [0m
+  [4;36;1mCharacter Update (0.3ms)[0m   [0;1mUPDATE "characters" SET "updated_at" = '2010-01-27 19:50:50', "name" = 'Width' WHERE "id" = 7[0m
+Redirected to http://localhost:3000/species.%23%3Cspecies:0x10339ac48%3E
+Completed in 65ms (DB: 1) | 302 Found [http://localhost/species/15]
+
+
+Processing SpeciesController#index to #<species:0x10339ac48> (for 127.0.0.1 at 2010-01-27 11:50:50) [GET]
+  [4;35;1mSpecies Load (0.4ms)[0m   [0mSELECT * FROM "species" [0m
+Rendering template within layouts/application
+Rendering species/index
+Completed in 7ms (View: 3, DB: 0) | 200 OK [http://localhost/species.%23%3Cspecies:0x10339ac48%3E]
+
+
+Processing SpeciesController#show (for 127.0.0.1 at 2010-01-27 11:50:51) [GET]
+  Parameters: {"id"=>"15"}
+  [4;36;1mSpecies Load (0.1ms)[0m   [0;1mSELECT * FROM "species" WHERE ("species"."id" = 15) [0m
+Rendering template within layouts/application
+Rendering species/show
+  [4;35;1mCharacter Load (0.2ms)[0m   [0mSELECT * FROM "characters" WHERE ("characters".species_id = 15) [0m
+Rendered species/_character_line (1.3ms)
+Completed in 15ms (View: 10, DB: 0) | 200 OK [http://localhost/species/15]
+
+
+Processing SpeciesController#index to #<species:0x10339ac48> (for 127.0.0.1 at 2010-01-27 11:51:07) [GET]
+  [4;36;1mSpecies Load (0.4ms)[0m   [0;1mSELECT * FROM "species" [0m
+Rendering template within layouts/application
+Rendering species/index
+Completed in 7ms (View: 3, DB: 0) | 200 OK [http://localhost/species.%23%3Cspecies:0x10339ac48%3E]
+
+
+Processing SpeciesController#show (for 127.0.0.1 at 2010-01-27 11:51:08) [GET]
+  Parameters: {"id"=>"15"}
+  [4;35;1mSpecies Load (0.1ms)[0m   [0mSELECT * FROM "species" WHERE ("species"."id" = 15) [0m
+Rendering template within layouts/application
+Rendering species/show
+  [4;36;1mCharacter Load (0.3ms)[0m   [0;1mSELECT * FROM "characters" WHERE ("characters".species_id = 15) [0m
+Rendered species/_character_line (0.1ms)
+Completed in 12ms (View: 7, DB: 0) | 200 OK [http://localhost/species/15]
+
+
+Processing SpeciesController#show (for 127.0.0.1 at 2010-01-27 11:51:19) [GET]
+  Parameters: {"id"=>"15"}
+  [4;35;1mSpecies Load (0.1ms)[0m   [0mSELECT * FROM "species" WHERE ("species"."id" = 15) [0m
+Rendering template within layouts/application
+Rendering species/show
+  [4;36;1mCharacter Load (0.3ms)[0m   [0;1mSELECT * FROM "characters" WHERE ("characters".species_id = 15) [0m
+Rendered species/_character_line (0.1ms)
+Completed in 11ms (View: 7, DB: 0) | 200 OK [http://localhost/species/15]
+
+
+Processing SpeciesController#edit (for 127.0.0.1 at 2010-01-27 11:51:21) [GET]
+  Parameters: {"id"=>"15"}
+  [4;35;1mSpecies Load (0.1ms)[0m   [0mSELECT * FROM "species" WHERE ("species"."id" = 15) [0m
+Rendering template within layouts/application
+Rendering species/edit
+  [4;36;1mCharacter Load (0.2ms)[0m   [0;1mSELECT * FROM "characters" WHERE ("characters".species_id = 15) [0m
+DEPRECATION WARNING: _delete is deprecated in nested attributes. Use _destroy instead.. (called from _delete at /Users/bryce/.gems/gems/activerecord-2.3.5/lib/active_record/nested_attributes.rb:263)
+Rendered species/_character (3.4ms)
+DEPRECATION WARNING: _delete is deprecated in nested attributes. Use _destroy instead.. (called from _delete at /Users/bryce/.gems/gems/activerecord-2.3.5/lib/active_record/nested_attributes.rb:263)
+Rendered species/_character (2.7ms)
+Rendered species/_form (13.0ms)
+Completed in 19ms (View: 15, DB: 0) | 200 OK [http://localhost/species/15/edit]
+
+
+Processing SpeciesController#update (for 127.0.0.1 at 2010-01-27 11:51:22) [PUT]
+  Parameters: {"commit"=>"Submit", "authenticity_token"=>"kQED3Z/0zZ6VHSdwiFu1u6NPMPFLFq8MEDJZt3g4j9o=", "id"=>"15", "species"=>{"characters_attributes"=>{"0"=>{"name"=>"Width", "_delete"=>"", "id"=>"7", "unit"=>"m", "value"=>"1.829"}}, "scientific_name"=>"Homo sapiens"}}
+  [4;35;1mSpecies Load (0.1ms)[0m   [0mSELECT * FROM "species" WHERE ("species"."id" = 15) [0m
+  [4;36;1mCharacter Load (0.2ms)[0m   [0;1mSELECT * FROM "characters" WHERE ("characters".species_id = 15) [0m
+Redirected to http://localhost:3000/species/15
+Completed in 11ms (DB: 0) | 302 Found [http://localhost/species/15]
+
+
+Processing SpeciesController#show (for 127.0.0.1 at 2010-01-27 11:51:22) [GET]
+  Parameters: {"id"=>"15"}
+  [4;35;1mSpecies Load (0.1ms)[0m   [0mSELECT * FROM "species" WHERE ("species"."id" = 15) [0m
+Rendering template within layouts/application
+Rendering species/show
+  [4;36;1mCharacter Load (0.5ms)[0m   [0;1mSELECT * FROM "characters" WHERE ("characters".species_id = 15) [0m
+Rendered species/_character_line (0.2ms)
+Completed in 13ms (View: 9, DB: 1) | 200 OK [http://localhost/species/15]
+
+
+Processing SpeciesController#update (for 127.0.0.1 at 2010-01-27 11:51:27) [PUT]
+  Parameters: {"commit"=>"Submit", "authenticity_token"=>"kQED3Z/0zZ6VHSdwiFu1u6NPMPFLFq8MEDJZt3g4j9o=", "id"=>"15", "species"=>{"characters_attributes"=>{"0"=>{"name"=>"Width", "_delete"=>"", "id"=>"7", "unit"=>"km", "value"=>"1.829"}}, "scientific_name"=>"Homo sapiens"}}
+  [4;35;1mSpecies Load (0.1ms)[0m   [0mSELECT * FROM "species" WHERE ("species"."id" = 15) [0m
+  [4;36;1mCharacter Load (0.3ms)[0m   [0;1mSELECT * FROM "characters" WHERE ("characters".species_id = 15) [0m
+  [4;35;1mCharacter Update (0.3ms)[0m   [0mUPDATE "characters" SET "updated_at" = '2010-01-27 19:51:27', "unit" = 'km' WHERE "id" = 7[0m
+Redirected to http://localhost:3000/species/15
+Completed in 122ms (DB: 1) | 302 Found [http://localhost/species/15]
+
+
+Processing SpeciesController#show (for 127.0.0.1 at 2010-01-27 11:51:27) [GET]
+  Parameters: {"id"=>"15"}
+  [4;36;1mSpecies Load (0.1ms)[0m   [0;1mSELECT * FROM "species" WHERE ("species"."id" = 15) [0m
+Rendering template within layouts/application
+Rendering species/show
+  [4;35;1mCharacter Load (0.2ms)[0m   [0mSELECT * FROM "characters" WHERE ("characters".species_id = 15) [0m
+Rendered species/_character_line (0.1ms)
+Completed in 11ms (View: 6, DB: 0) | 200 OK [http://localhost/species/15]
+
+
+Processing SpeciesController#edit (for 127.0.0.1 at 2010-01-27 11:52:54) [GET]
+  Parameters: {"id"=>"15"}
+  [4;36;1mSpecies Load (0.2ms)[0m   [0;1mSELECT * FROM "species" WHERE ("species"."id" = 15) [0m
+Rendering template within layouts/application
+Rendering species/edit
+  [4;35;1mCharacter Load (0.2ms)[0m   [0mSELECT * FROM "characters" WHERE ("characters".species_id = 15) [0m
+DEPRECATION WARNING: _delete is deprecated in nested attributes. Use _destroy instead.. (called from _delete at /Users/bryce/.gems/gems/activerecord-2.3.5/lib/active_record/nested_attributes.rb:263)
+Rendered species/_character (3.7ms)
+DEPRECATION WARNING: _delete is deprecated in nested attributes. Use _destroy instead.. (called from _delete at /Users/bryce/.gems/gems/activerecord-2.3.5/lib/active_record/nested_attributes.rb:263)
+Rendered species/_character (2.2ms)
+Rendered species/_form (12.5ms)
+Completed in 19ms (View: 15, DB: 0) | 200 OK [http://localhost/species/15/edit]
+
+
+Processing SpeciesController#edit (for 127.0.0.1 at 2010-01-27 11:53:12) [GET]
+  Parameters: {"id"=>"15"}
+  [4;36;1mSpecies Load (0.1ms)[0m   [0;1mSELECT * FROM "species" WHERE ("species"."id" = 15) [0m
+Rendering template within layouts/application
+Rendering species/edit
+  [4;35;1mCharacter Load (0.2ms)[0m   [0mSELECT * FROM "characters" WHERE ("characters".species_id = 15) [0m
+DEPRECATION WARNING: _delete is deprecated in nested attributes. Use _destroy instead.. (called from _delete at /Users/bryce/.gems/gems/activerecord-2.3.5/lib/active_record/nested_attributes.rb:263)
+Rendered species/_character (60.1ms)
+DEPRECATION WARNING: _delete is deprecated in nested attributes. Use _destroy instead.. (called from _delete at /Users/bryce/.gems/gems/activerecord-2.3.5/lib/active_record/nested_attributes.rb:263)
+Rendered species/_character (2.2ms)
+Rendered species/_form (68.9ms)
+Completed in 80ms (View: 75, DB: 0) | 200 OK [http://localhost/species/15/edit]
+
+
+Processing SpeciesController#edit (for 127.0.0.1 at 2010-01-27 14:00:43) [GET]
+  Parameters: {"id"=>"15"}
+  [4;36;1mSpecies Load (0.1ms)[0m   [0;1mSELECT * FROM "species" WHERE ("species"."id" = 15) [0m
+Rendering template within layouts/application
+Rendering species/edit
+  [4;35;1mCharacter Load (0.2ms)[0m   [0mSELECT * FROM "characters" WHERE ("characters".species_id = 15) [0m
+DEPRECATION WARNING: _delete is deprecated in nested attributes. Use _destroy instead.. (called from _delete at /Users/bryce/.gems/gems/activerecord-2.3.5/lib/active_record/nested_attributes.rb:263)
+Rendered species/_character (4.4ms)
+DEPRECATION WARNING: _delete is deprecated in nested attributes. Use _destroy instead.. (called from _delete at /Users/bryce/.gems/gems/activerecord-2.3.5/lib/active_record/nested_attributes.rb:263)
+Rendered species/_character (2.2ms)
+Rendered species/_form (13.6ms)
+Completed in 20ms (View: 16, DB: 0) | 200 OK [http://localhost/species/15/edit]
+
+
+Processing SpeciesController#edit (for 127.0.0.1 at 2010-01-27 14:07:10) [GET]
+  Parameters: {"id"=>"15"}
+  [4;36;1mSpecies Load (0.2ms)[0m   [0;1mSELECT * FROM "species" WHERE ("species"."id" = 15) [0m
+Rendering template within layouts/application
+Rendering species/edit
+  [4;35;1mCharacter Load (0.2ms)[0m   [0mSELECT * FROM "characters" WHERE ("characters".species_id = 15) [0m
+DEPRECATION WARNING: _delete is deprecated in nested attributes. Use _destroy instead.. (called from _delete at /Users/bryce/.gems/gems/activerecord-2.3.5/lib/active_record/nested_attributes.rb:263)
+Rendered species/_character (3.4ms)
+DEPRECATION WARNING: _delete is deprecated in nested attributes. Use _destroy instead.. (called from _delete at /Users/bryce/.gems/gems/activerecord-2.3.5/lib/active_record/nested_attributes.rb:263)
+Rendered species/_character (2.2ms)
+Rendered species/_form (14.4ms)
+Completed in 23ms (View: 19, DB: 0) | 200 OK [http://localhost/species/15/edit]
+
+
+Processing SpeciesController#edit (for 127.0.0.1 at 2010-01-27 14:08:05) [GET]
+  Parameters: {"id"=>"15"}
+  [4;36;1mSpecies Load (0.2ms)[0m   [0;1mSELECT * FROM "species" WHERE ("species"."id" = 15) [0m
+Rendering template within layouts/application
+Rendering species/edit
+  [4;35;1mCharacter Load (0.2ms)[0m   [0mSELECT * FROM "characters" WHERE ("characters".species_id = 15) [0m
+DEPRECATION WARNING: _delete is deprecated in nested attributes. Use _destroy instead.. (called from _delete at /Users/bryce/.gems/gems/activerecord-2.3.5/lib/active_record/nested_attributes.rb:263)
+Rendered species/_character (3.5ms)
+DEPRECATION WARNING: _delete is deprecated in nested attributes. Use _destroy instead.. (called from _delete at /Users/bryce/.gems/gems/activerecord-2.3.5/lib/active_record/nested_attributes.rb:263)
+Rendered species/_character (2.2ms)
+Rendered species/_form (13.4ms)
+Completed in 20ms (View: 15, DB: 0) | 200 OK [http://localhost/species/15/edit]
+
+
+Processing SpeciesController#edit (for 127.0.0.1 at 2010-01-27 14:08:14) [GET]
+  Parameters: {"id"=>"15"}
+  [4;36;1mSpecies Load (0.2ms)[0m   [0;1mSELECT * FROM "species" WHERE ("species"."id" = 15) [0m
+Rendering template within layouts/application
+Rendering species/edit
+  [4;35;1mCharacter Load (0.2ms)[0m   [0mSELECT * FROM "characters" WHERE ("characters".species_id = 15) [0m
+DEPRECATION WARNING: _delete is deprecated in nested attributes. Use _destroy instead.. (called from _delete at /Users/bryce/.gems/gems/activerecord-2.3.5/lib/active_record/nested_attributes.rb:263)
+Rendered species/_character (3.4ms)
+DEPRECATION WARNING: _delete is deprecated in nested attributes. Use _destroy instead.. (called from _delete at /Users/bryce/.gems/gems/activerecord-2.3.5/lib/active_record/nested_attributes.rb:263)
+Rendered species/_character (2.4ms)
+Rendered species/_form (12.8ms)
+Completed in 19ms (View: 15, DB: 0) | 200 OK [http://localhost/species/15/edit]
+
+
+Processing SpeciesController#edit (for 127.0.0.1 at 2010-01-27 14:09:07) [GET]
+  Parameters: {"id"=>"15"}
+  [4;36;1mSpecies Load (0.2ms)[0m   [0;1mSELECT * FROM "species" WHERE ("species"."id" = 15) [0m
+Rendering template within layouts/application
+Rendering species/edit
+  [4;35;1mCharacter Load (0.3ms)[0m   [0mSELECT * FROM "characters" WHERE ("characters".species_id = 15) [0m
+DEPRECATION WARNING: _delete is deprecated in nested attributes. Use _destroy instead.. (called from _delete at /Users/bryce/.gems/gems/activerecord-2.3.5/lib/active_record/nested_attributes.rb:263)
+Rendered species/_character (3.6ms)
+DEPRECATION WARNING: _delete is deprecated in nested attributes. Use _destroy instead.. (called from _delete at /Users/bryce/.gems/gems/activerecord-2.3.5/lib/active_record/nested_attributes.rb:263)
+Rendered species/_character (2.2ms)
+Rendered species/_form (67.9ms)
+Completed in 74ms (View: 70, DB: 0) | 200 OK [http://localhost/species/15/edit]
+
+
+Processing SpeciesController#edit (for 127.0.0.1 at 2010-01-27 14:09:24) [GET]
+  Parameters: {"id"=>"15"}
+  [4;36;1mSpecies Load (0.2ms)[0m   [0;1mSELECT * FROM "species" WHERE ("species"."id" = 15) [0m
+Rendering template within layouts/application
+Rendering species/edit
+  [4;35;1mCharacter Load (0.2ms)[0m   [0mSELECT * FROM "characters" WHERE ("characters".species_id = 15) [0m
+DEPRECATION WARNING: _delete is deprecated in nested attributes. Use _destroy instead.. (called from _delete at /Users/bryce/.gems/gems/activerecord-2.3.5/lib/active_record/nested_attributes.rb:263)
+Rendered species/_character (3.9ms)
+DEPRECATION WARNING: _delete is deprecated in nested attributes. Use _destroy instead.. (called from _delete at /Users/bryce/.gems/gems/activerecord-2.3.5/lib/active_record/nested_attributes.rb:263)
+Rendered species/_character (2.2ms)
+Rendered species/_form (13.1ms)
+Completed in 20ms (View: 15, DB: 0) | 200 OK [http://localhost/species/15/edit]
+
+
+Processing SpeciesController#edit (for 127.0.0.1 at 2010-01-27 14:09:42) [GET]
+  Parameters: {"id"=>"15"}
+  [4;36;1mSpecies Load (0.1ms)[0m   [0;1mSELECT * FROM "species" WHERE ("species"."id" = 15) [0m
+Rendering template within layouts/application
+Rendering species/edit
+  [4;35;1mCharacter Load (0.2ms)[0m   [0mSELECT * FROM "characters" WHERE ("characters".species_id = 15) [0m
+DEPRECATION WARNING: _delete is deprecated in nested attributes. Use _destroy instead.. (called from _delete at /Users/bryce/.gems/gems/activerecord-2.3.5/lib/active_record/nested_attributes.rb:263)
+Rendered species/_character (3.3ms)
+DEPRECATION WARNING: _delete is deprecated in nested attributes. Use _destroy instead.. (called from _delete at /Users/bryce/.gems/gems/activerecord-2.3.5/lib/active_record/nested_attributes.rb:263)
+Rendered species/_character (2.1ms)
+Rendered species/_form (12.0ms)
+Completed in 18ms (View: 14, DB: 0) | 200 OK [http://localhost/species/15/edit]
+
+
+Processing SpeciesController#edit (for 127.0.0.1 at 2010-01-27 14:09:49) [GET]
+  Parameters: {"id"=>"15"}
+  [4;36;1mSpecies Load (0.1ms)[0m   [0;1mSELECT * FROM "species" WHERE ("species"."id" = 15) [0m
+Rendering template within layouts/application
+Rendering species/edit
+  [4;35;1mCharacter Load (0.2ms)[0m   [0mSELECT * FROM "characters" WHERE ("characters".species_id = 15) [0m
+DEPRECATION WARNING: _delete is deprecated in nested attributes. Use _destroy instead.. (called from _delete at /Users/bryce/.gems/gems/activerecord-2.3.5/lib/active_record/nested_attributes.rb:263)
+Rendered species/_character (3.4ms)
+DEPRECATION WARNING: _delete is deprecated in nested attributes. Use _destroy instead.. (called from _delete at /Users/bryce/.gems/gems/activerecord-2.3.5/lib/active_record/nested_attributes.rb:263)
+Rendered species/_character (2.2ms)
+Rendered species/_form (12.5ms)
+Completed in 21ms (View: 15, DB: 0) | 200 OK [http://localhost/species/15/edit]
+
+
+Processing SpeciesController#edit (for 127.0.0.1 at 2010-01-27 14:09:57) [GET]
+  Parameters: {"id"=>"15"}
+  [4;36;1mSpecies Load (0.2ms)[0m   [0;1mSELECT * FROM "species" WHERE ("species"."id" = 15) [0m
+Rendering template within layouts/application
+Rendering species/edit
+  [4;35;1mCharacter Load (0.2ms)[0m   [0mSELECT * FROM "characters" WHERE ("characters".species_id = 15) [0m
+DEPRECATION WARNING: _delete is deprecated in nested attributes. Use _destroy instead.. (called from _delete at /Users/bryce/.gems/gems/activerecord-2.3.5/lib/active_record/nested_attributes.rb:263)
+Rendered species/_character (3.4ms)
+DEPRECATION WARNING: _delete is deprecated in nested attributes. Use _destroy instead.. (called from _delete at /Users/bryce/.gems/gems/activerecord-2.3.5/lib/active_record/nested_attributes.rb:263)
+Rendered species/_character (2.2ms)
+Rendered species/_form (12.5ms)
+Completed in 19ms (View: 15, DB: 0) | 200 OK [http://localhost/species/15/edit]
+
+
+Processing SpeciesController#edit (for 127.0.0.1 at 2010-01-27 14:10:31) [GET]
+  Parameters: {"id"=>"15"}
+  [4;36;1mSpecies Load (0.1ms)[0m   [0;1mSELECT * FROM "species" WHERE ("species"."id" = 15) [0m
+Rendering template within layouts/application
+Rendering species/edit
+  [4;35;1mCharacter Load (0.3ms)[0m   [0mSELECT * FROM "characters" WHERE ("characters".species_id = 15) [0m
+DEPRECATION WARNING: _delete is deprecated in nested attributes. Use _destroy instead.. (called from _delete at /Users/bryce/.gems/gems/activerecord-2.3.5/lib/active_record/nested_attributes.rb:263)
+Rendered species/_character (3.5ms)
+DEPRECATION WARNING: _delete is deprecated in nested attributes. Use _destroy instead.. (called from _delete at /Users/bryce/.gems/gems/activerecord-2.3.5/lib/active_record/nested_attributes.rb:263)
+Rendered species/_character (2.2ms)
+Rendered species/_form (70.5ms)
+Completed in 79ms (View: 75, DB: 0) | 200 OK [http://localhost/species/15/edit]
+
+
+Processing SpeciesController#edit (for 127.0.0.1 at 2010-01-27 14:10:43) [GET]
+  Parameters: {"id"=>"15"}
+  [4;36;1mSpecies Load (0.1ms)[0m   [0;1mSELECT * FROM "species" WHERE ("species"."id" = 15) [0m
+Rendering template within layouts/application
+Rendering species/edit
+  [4;35;1mCharacter Load (0.2ms)[0m   [0mSELECT * FROM "characters" WHERE ("characters".species_id = 15) [0m
+DEPRECATION WARNING: _delete is deprecated in nested attributes. Use _destroy instead.. (called from _delete at /Users/bryce/.gems/gems/activerecord-2.3.5/lib/active_record/nested_attributes.rb:263)
+Rendered species/_character (3.4ms)
+DEPRECATION WARNING: _delete is deprecated in nested attributes. Use _destroy instead.. (called from _delete at /Users/bryce/.gems/gems/activerecord-2.3.5/lib/active_record/nested_attributes.rb:263)
+Rendered species/_character (2.1ms)
+Rendered species/_form (13.8ms)
+Completed in 23ms (View: 19, DB: 0) | 200 OK [http://localhost/species/15/edit]
+
+
+Processing SpeciesController#edit (for 127.0.0.1 at 2010-01-27 14:10:52) [GET]
+  Parameters: {"id"=>"15"}
+  [4;36;1mSpecies Load (0.1ms)[0m   [0;1mSELECT * FROM "species" WHERE ("species"."id" = 15) [0m
+Rendering template within layouts/application
+Rendering species/edit
+  [4;35;1mCharacter Load (0.2ms)[0m   [0mSELECT * FROM "characters" WHERE ("characters".species_id = 15) [0m
+DEPRECATION WARNING: _delete is deprecated in nested attributes. Use _destroy instead.. (called from _delete at /Users/bryce/.gems/gems/activerecord-2.3.5/lib/active_record/nested_attributes.rb:263)
+Rendered species/_character (3.4ms)
+DEPRECATION WARNING: _delete is deprecated in nested attributes. Use _destroy instead.. (called from _delete at /Users/bryce/.gems/gems/activerecord-2.3.5/lib/active_record/nested_attributes.rb:263)
+Rendered species/_character (2.2ms)
+Rendered species/_form (12.2ms)
+Completed in 18ms (View: 14, DB: 0) | 200 OK [http://localhost/species/15/edit]
+
+
+Processing SpeciesController#edit (for 127.0.0.1 at 2010-01-27 14:10:58) [GET]
+  Parameters: {"id"=>"15"}
+  [4;36;1mSpecies Load (0.2ms)[0m   [0;1mSELECT * FROM "species" WHERE ("species"."id" = 15) [0m
+Rendering template within layouts/application
+Rendering species/edit
+  [4;35;1mCharacter Load (0.2ms)[0m   [0mSELECT * FROM "characters" WHERE ("characters".species_id = 15) [0m
+DEPRECATION WARNING: _delete is deprecated in nested attributes. Use _destroy instead.. (called from _delete at /Users/bryce/.gems/gems/activerecord-2.3.5/lib/active_record/nested_attributes.rb:263)
+Rendered species/_character (3.4ms)
+DEPRECATION WARNING: _delete is deprecated in nested attributes. Use _destroy instead.. (called from _delete at /Users/bryce/.gems/gems/activerecord-2.3.5/lib/active_record/nested_attributes.rb:263)
+Rendered species/_character (2.2ms)
+Rendered species/_form (13.1ms)
+Completed in 20ms (View: 15, DB: 0) | 200 OK [http://localhost/species/15/edit]
+
+
+Processing SpeciesController#edit (for 127.0.0.1 at 2010-01-27 14:12:13) [GET]
+  Parameters: {"id"=>"15"}
+  [4;36;1mSpecies Load (0.1ms)[0m   [0;1mSELECT * FROM "species" WHERE ("species"."id" = 15) [0m
+Rendering template within layouts/application
+Rendering species/edit
+  [4;35;1mCharacter Load (0.2ms)[0m   [0mSELECT * FROM "characters" WHERE ("characters".species_id = 15) [0m
+DEPRECATION WARNING: _delete is deprecated in nested attributes. Use _destroy instead.. (called from _delete at /Users/bryce/.gems/gems/activerecord-2.3.5/lib/active_record/nested_attributes.rb:263)
+Rendered species/_character (3.4ms)
+DEPRECATION WARNING: _delete is deprecated in nested attributes. Use _destroy instead.. (called from _delete at /Users/bryce/.gems/gems/activerecord-2.3.5/lib/active_record/nested_attributes.rb:263)
+Rendered species/_character (2.1ms)
+Rendered species/_form (12.4ms)
+Completed in 19ms (View: 14, DB: 0) | 200 OK [http://localhost/species/15/edit]
+
+
+Processing SpeciesController#edit (for 127.0.0.1 at 2010-01-27 14:12:19) [GET]
+  Parameters: {"id"=>"15"}
+  [4;36;1mSpecies Load (0.1ms)[0m   [0;1mSELECT * FROM "species" WHERE ("species"."id" = 15) [0m
+Rendering template within layouts/application
+Rendering species/edit
+  [4;35;1mCharacter Load (0.3ms)[0m   [0mSELECT * FROM "characters" WHERE ("characters".species_id = 15) [0m
+DEPRECATION WARNING: _delete is deprecated in nested attributes. Use _destroy instead.. (called from _delete at /Users/bryce/.gems/gems/activerecord-2.3.5/lib/active_record/nested_attributes.rb:263)
+Rendered species/_character (3.6ms)
+DEPRECATION WARNING: _delete is deprecated in nested attributes. Use _destroy instead.. (called from _delete at /Users/bryce/.gems/gems/activerecord-2.3.5/lib/active_record/nested_attributes.rb:263)
+Rendered species/_character (2.3ms)
+Rendered species/_form (69.3ms)
+Completed in 76ms (View: 71, DB: 0) | 200 OK [http://localhost/species/15/edit]
+
+
+Processing SpeciesController#edit (for 127.0.0.1 at 2010-01-27 14:12:31) [GET]
+  Parameters: {"id"=>"15"}
+  [4;36;1mSpecies Load (0.1ms)[0m   [0;1mSELECT * FROM "species" WHERE ("species"."id" = 15) [0m
+Rendering template within layouts/application
+Rendering species/edit
+  [4;35;1mCharacter Load (0.2ms)[0m   [0mSELECT * FROM "characters" WHERE ("characters".species_id = 15) [0m
+DEPRECATION WARNING: _delete is deprecated in nested attributes. Use _destroy instead.. (called from _delete at /Users/bryce/.gems/gems/activerecord-2.3.5/lib/active_record/nested_attributes.rb:263)
+Rendered species/_character (3.9ms)
+DEPRECATION WARNING: _delete is deprecated in nested attributes. Use _destroy instead.. (called from _delete at /Users/bryce/.gems/gems/activerecord-2.3.5/lib/active_record/nested_attributes.rb:263)
+Rendered species/_character (2.2ms)
+Rendered species/_form (12.9ms)
+Completed in 20ms (View: 15, DB: 0) | 200 OK [http://localhost/species/15/edit]
+
+
+Processing SpeciesController#edit (for 127.0.0.1 at 2010-01-27 14:12:38) [GET]
+  Parameters: {"id"=>"15"}
+  [4;36;1mSpecies Load (0.1ms)[0m   [0;1mSELECT * FROM "species" WHERE ("species"."id" = 15) [0m
+Rendering template within layouts/application
+Rendering species/edit
+  [4;35;1mCharacter Load (0.2ms)[0m   [0mSELECT * FROM "characters" WHERE ("characters".species_id = 15) [0m
+DEPRECATION WARNING: _delete is deprecated in nested attributes. Use _destroy instead.. (called from _delete at /Users/bryce/.gems/gems/activerecord-2.3.5/lib/active_record/nested_attributes.rb:263)
+Rendered species/_character (3.5ms)
+DEPRECATION WARNING: _delete is deprecated in nested attributes. Use _destroy instead.. (called from _delete at /Users/bryce/.gems/gems/activerecord-2.3.5/lib/active_record/nested_attributes.rb:263)
+Rendered species/_character (2.2ms)
+Rendered species/_form (12.4ms)
+Completed in 19ms (View: 14, DB: 0) | 200 OK [http://localhost/species/15/edit]
+
+
+Processing SpeciesController#edit (for 127.0.0.1 at 2010-01-27 14:12:52) [GET]
+  Parameters: {"id"=>"15"}
+  [4;36;1mSpecies Load (0.1ms)[0m   [0;1mSELECT * FROM "species" WHERE ("species"."id" = 15) [0m
+Rendering template within layouts/application
+Rendering species/edit
+  [4;35;1mCharacter Load (0.2ms)[0m   [0mSELECT * FROM "characters" WHERE ("characters".species_id = 15) [0m
+DEPRECATION WARNING: _delete is deprecated in nested attributes. Use _destroy instead.. (called from _delete at /Users/bryce/.gems/gems/activerecord-2.3.5/lib/active_record/nested_attributes.rb:263)
+Rendered species/_character (3.9ms)
+DEPRECATION WARNING: _delete is deprecated in nested attributes. Use _destroy instead.. (called from _delete at /Users/bryce/.gems/gems/activerecord-2.3.5/lib/active_record/nested_attributes.rb:263)
+Rendered species/_character (2.2ms)
+Rendered species/_form (14.9ms)
+Completed in 24ms (View: 20, DB: 0) | 200 OK [http://localhost/species/15/edit]
+
+
+Processing SpeciesController#edit (for 127.0.0.1 at 2010-01-27 14:13:02) [GET]
+  Parameters: {"id"=>"15"}
+  [4;36;1mSpecies Load (0.2ms)[0m   [0;1mSELECT * FROM "species" WHERE ("species"."id" = 15) [0m
+Rendering template within layouts/application
+Rendering species/edit
+  [4;35;1mCharacter Load (0.2ms)[0m   [0mSELECT * FROM "characters" WHERE ("characters".species_id = 15) [0m
+DEPRECATION WARNING: _delete is deprecated in nested attributes. Use _destroy instead.. (called from _delete at /Users/bryce/.gems/gems/activerecord-2.3.5/lib/active_record/nested_attributes.rb:263)
+Rendered species/_character (3.3ms)
+DEPRECATION WARNING: _delete is deprecated in nested attributes. Use _destroy instead.. (called from _delete at /Users/bryce/.gems/gems/activerecord-2.3.5/lib/active_record/nested_attributes.rb:263)
+Rendered species/_character (2.1ms)
+Rendered species/_form (14.1ms)
+Completed in 23ms (View: 19, DB: 0) | 200 OK [http://localhost/species/15/edit]
+
+
+Processing SpeciesController#edit (for 127.0.0.1 at 2010-01-27 14:13:18) [GET]
+  Parameters: {"id"=>"15"}
+  [4;36;1mSpecies Load (0.1ms)[0m   [0;1mSELECT * FROM "species" WHERE ("species"."id" = 15) [0m
+Rendering template within layouts/application
+Rendering species/edit
+  [4;35;1mCharacter Load (0.2ms)[0m   [0mSELECT * FROM "characters" WHERE ("characters".species_id = 15) [0m
+DEPRECATION WARNING: _delete is deprecated in nested attributes. Use _destroy instead.. (called from _delete at /Users/bryce/.gems/gems/activerecord-2.3.5/lib/active_record/nested_attributes.rb:263)
+Rendered species/_character (3.8ms)
+DEPRECATION WARNING: _delete is deprecated in nested attributes. Use _destroy instead.. (called from _delete at /Users/bryce/.gems/gems/activerecord-2.3.5/lib/active_record/nested_attributes.rb:263)
+Rendered species/_character (2.2ms)
+Rendered species/_form (14.7ms)
+Completed in 83ms (View: 78, DB: 0) | 200 OK [http://localhost/species/15/edit]
+
+
+Processing SpeciesController#update (for 127.0.0.1 at 2010-01-27 14:13:22) [PUT]
+  Parameters: {"commit"=>"Submit", "authenticity_token"=>"kQED3Z/0zZ6VHSdwiFu1u6NPMPFLFq8MEDJZt3g4j9o=", "id"=>"15", "species"=>{"characters_attributes"=>{"1264630400521"=>{"name"=>"", "_delete"=>"", "unit"=>"", "value"=>""}, "1264630400533"=>{"name"=>"", "_delete"=>"", "unit"=>"", "value"=>""}, "1264630399964"=>{"name"=>"", "_delete"=>"", "unit"=>"", "value"=>""}, "1264630400679"=>{"name"=>"", "_delete"=>"", "unit"=>"", "value"=>""}, "0"=>{"name"=>"Width", "_delete"=>"", "id"=>"7", "unit"=>"km", "value"=>"1.829"}, "1264630400847"=>{"name"=>"", "_delete"=>"", "unit"=>"", "value"=>""}}, "scientific_name"=>"Homo sapiens"}}
+  [4;36;1mSpecies Load (0.2ms)[0m   [0;1mSELECT * FROM "species" WHERE ("species"."id" = 15) [0m
+  [4;35;1mCharacter Load (0.2ms)[0m   [0mSELECT * FROM "characters" WHERE ("characters".species_id = 15) [0m
+Redirected to http://localhost:3000/species/15
+Completed in 12ms (DB: 0) | 302 Found [http://localhost/species/15]
+
+
+Processing SpeciesController#show (for 127.0.0.1 at 2010-01-27 14:13:22) [GET]
+  Parameters: {"id"=>"15"}
+  [4;36;1mSpecies Load (0.1ms)[0m   [0;1mSELECT * FROM "species" WHERE ("species"."id" = 15) [0m
+Rendering template within layouts/application
+Rendering species/show
+  [4;35;1mCharacter Load (0.2ms)[0m   [0mSELECT * FROM "characters" WHERE ("characters".species_id = 15) [0m
+Rendered species/_character_line (0.1ms)
+Completed in 10ms (View: 6, DB: 0) | 200 OK [http://localhost/species/15]
+
+
+Processing SpeciesController#edit (for 127.0.0.1 at 2010-01-27 14:13:25) [GET]
+  Parameters: {"id"=>"15"}
+  [4;36;1mSpecies Load (0.1ms)[0m   [0;1mSELECT * FROM "species" WHERE ("species"."id" = 15) [0m
+Rendering template within layouts/application
+Rendering species/edit
+  [4;35;1mCharacter Load (0.2ms)[0m   [0mSELECT * FROM "characters" WHERE ("characters".species_id = 15) [0m
+DEPRECATION WARNING: _delete is deprecated in nested attributes. Use _destroy instead.. (called from _delete at /Users/bryce/.gems/gems/activerecord-2.3.5/lib/active_record/nested_attributes.rb:263)
+Rendered species/_character (3.5ms)
+DEPRECATION WARNING: _delete is deprecated in nested attributes. Use _destroy instead.. (called from _delete at /Users/bryce/.gems/gems/activerecord-2.3.5/lib/active_record/nested_attributes.rb:263)
+Rendered species/_character (2.2ms)
+Rendered species/_form (68.2ms)
+Completed in 74ms (View: 70, DB: 0) | 200 OK [http://localhost/species/15/edit]
+
+
+Processing SpeciesController#update (for 127.0.0.1 at 2010-01-27 14:13:32) [PUT]
+  Parameters: {"commit"=>"Submit", "authenticity_token"=>"kQED3Z/0zZ6VHSdwiFu1u6NPMPFLFq8MEDJZt3g4j9o=", "id"=>"15", "species"=>{"characters_attributes"=>{"1264630407264"=>{"name"=>"Here", "_delete"=>"", "unit"=>"m", "value"=>"5"}, "0"=>{"name"=>"Width", "_delete"=>"", "id"=>"7", "unit"=>"km", "value"=>"1.829"}}, "scientific_name"=>"Homo sapiens"}}
+  [4;36;1mSpecies Load (0.2ms)[0m   [0;1mSELECT * FROM "species" WHERE ("species"."id" = 15) [0m
+  [4;35;1mCharacter Load (0.2ms)[0m   [0mSELECT * FROM "characters" WHERE ("characters".species_id = 15) [0m
+  [4;36;1mCharacter Create (0.3ms)[0m   [0;1mINSERT INTO "characters" ("name", "created_at", "updated_at", "value", "unit", "species_id") VALUES('Here', '2010-01-27 22:13:32', '2010-01-27 22:13:32', '5', 'm', 15)[0m
+Redirected to http://localhost:3000/species/15
+Completed in 69ms (DB: 1) | 302 Found [http://localhost/species/15]
+
+
+Processing SpeciesController#show (for 127.0.0.1 at 2010-01-27 14:13:32) [GET]
+  Parameters: {"id"=>"15"}
+  [4;35;1mSpecies Load (0.1ms)[0m   [0mSELECT * FROM "species" WHERE ("species"."id" = 15) [0m
+Rendering template within layouts/application
+Rendering species/show
+  [4;36;1mCharacter Load (0.3ms)[0m   [0;1mSELECT * FROM "characters" WHERE ("characters".species_id = 15) [0m
+Rendered species/_character_line (0.1ms)
+Rendered species/_character_line (0.1ms)
+Completed in 12ms (View: 7, DB: 0) | 200 OK [http://localhost/species/15]
+
+
+Processing SpeciesController#edit (for 127.0.0.1 at 2010-01-27 14:13:39) [GET]
+  Parameters: {"id"=>"15"}
+  [4;35;1mSpecies Load (0.1ms)[0m   [0mSELECT * FROM "species" WHERE ("species"."id" = 15) [0m
+Rendering template within layouts/application
+Rendering species/edit
+  [4;36;1mCharacter Load (0.3ms)[0m   [0;1mSELECT * FROM "characters" WHERE ("characters".species_id = 15) [0m
+DEPRECATION WARNING: _delete is deprecated in nested attributes. Use _destroy instead.. (called from _delete at /Users/bryce/.gems/gems/activerecord-2.3.5/lib/active_record/nested_attributes.rb:263)
+Rendered species/_character (3.5ms)
+DEPRECATION WARNING: _delete is deprecated in nested attributes. Use _destroy instead.. (called from _delete at /Users/bryce/.gems/gems/activerecord-2.3.5/lib/active_record/nested_attributes.rb:263)
+Rendered species/_character (59.3ms)
+DEPRECATION WARNING: _delete is deprecated in nested attributes. Use _destroy instead.. (called from _delete at /Users/bryce/.gems/gems/activerecord-2.3.5/lib/active_record/nested_attributes.rb:263)
+Rendered species/_character (2.2ms)
+Rendered species/_form (72.5ms)
+Completed in 79ms (View: 75, DB: 0) | 200 OK [http://localhost/species/15/edit]
+
+
+Processing SpeciesController#update (for 127.0.0.1 at 2010-01-27 14:13:44) [PUT]
+  Parameters: {"commit"=>"Submit", "authenticity_token"=>"kQED3Z/0zZ6VHSdwiFu1u6NPMPFLFq8MEDJZt3g4j9o=", "id"=>"15", "species"=>{"characters_attributes"=>{"0"=>{"name"=>"Width", "_delete"=>"", "id"=>"7", "unit"=>"km", "value"=>"1.829"}, "1"=>{"name"=>"Here", "_delete"=>"", "id"=>"8", "unit"=>"", "value"=>"5"}}, "scientific_name"=>"Homo sapiens"}}
+  [4;35;1mSpecies Load (0.2ms)[0m   [0mSELECT * FROM "species" WHERE ("species"."id" = 15) [0m
+  [4;36;1mCharacter Load (0.3ms)[0m   [0;1mSELECT * FROM "characters" WHERE ("characters".species_id = 15) [0m
+Rendering template within layouts/application
+Rendering species/edit
+DEPRECATION WARNING: _delete is deprecated in nested attributes. Use _destroy instead.. (called from _delete at /Users/bryce/.gems/gems/activerecord-2.3.5/lib/active_record/nested_attributes.rb:263)
+Rendered species/_character (2.7ms)
+DEPRECATION WARNING: _delete is deprecated in nested attributes. Use _destroy instead.. (called from _delete at /Users/bryce/.gems/gems/activerecord-2.3.5/lib/active_record/nested_attributes.rb:263)
+Rendered species/_character (2.2ms)
+DEPRECATION WARNING: _delete is deprecated in nested attributes. Use _destroy instead.. (called from _delete at /Users/bryce/.gems/gems/activerecord-2.3.5/lib/active_record/nested_attributes.rb:263)
+Rendered species/_character (3.2ms)
+Rendered species/_form (12.7ms)
+Completed in 28ms (View: 15, DB: 0) | 200 OK [http://localhost/species/15]
+
+
+Processing SpeciesController#update (for 127.0.0.1 at 2010-01-27 14:13:51) [PUT]
+  Parameters: {"commit"=>"Submit", "authenticity_token"=>"kQED3Z/0zZ6VHSdwiFu1u6NPMPFLFq8MEDJZt3g4j9o=", "id"=>"15", "species"=>{"characters_attributes"=>{"0"=>{"name"=>"Width", "_delete"=>"", "id"=>"7", "unit"=>"km", "value"=>"1.829"}, "1"=>{"name"=>"Here", "_delete"=>"", "id"=>"8", "unit"=>"m", "value"=>"5"}}, "scientific_name"=>"Homo sapiens"}}
+  [4;35;1mSpecies Load (0.2ms)[0m   [0mSELECT * FROM "species" WHERE ("species"."id" = 15) [0m
+  [4;36;1mCharacter Load (0.3ms)[0m   [0;1mSELECT * FROM "characters" WHERE ("characters".species_id = 15) [0m
+Redirected to http://localhost:3000/species/15
+Completed in 13ms (DB: 0) | 302 Found [http://localhost/species/15]
+
+
+Processing SpeciesController#show (for 127.0.0.1 at 2010-01-27 14:13:51) [GET]
+  Parameters: {"id"=>"15"}
+  [4;35;1mSpecies Load (0.1ms)[0m   [0mSELECT * FROM "species" WHERE ("species"."id" = 15) [0m
+Rendering template within layouts/application
+Rendering species/show
+  [4;36;1mCharacter Load (0.3ms)[0m   [0;1mSELECT * FROM "characters" WHERE ("characters".species_id = 15) [0m
+Rendered species/_character_line (0.2ms)
+Rendered species/_character_line (0.1ms)
+Completed in 75ms (View: 71, DB: 0) | 200 OK [http://localhost/species/15]
+
+
+Processing SpeciesController#new (for 127.0.0.1 at 2010-01-27 14:13:54) [GET]
+Rendering template within layouts/application
+Rendering species/new
+DEPRECATION WARNING: _delete is deprecated in nested attributes. Use _destroy instead.. (called from _delete at /Users/bryce/.gems/gems/activerecord-2.3.5/lib/active_record/nested_attributes.rb:263)
+Rendered species/_character (4.0ms)
+Rendered species/_form (9.8ms)
+Completed in 18ms (View: 14, DB: 0) | 200 OK [http://localhost/species/new]
+
+
+Processing SpeciesController#create (for 127.0.0.1 at 2010-01-27 14:14:00) [POST]
+  Parameters: {"commit"=>"Submit", "authenticity_token"=>"kQED3Z/0zZ6VHSdwiFu1u6NPMPFLFq8MEDJZt3g4j9o=", "species"=>{"scientific_name"=>"This is my new species"}}
+  [4;35;1mSpecies Create (0.3ms)[0m   [0mINSERT INTO "species" ("created_at", "scientific_name", "updated_at") VALUES('2010-01-27 22:14:00', 'This is my new species', '2010-01-27 22:14:00')[0m
+Redirected to http://localhost:3000/species.%23%3Cspecies:0x103413058%3E
+Completed in 55ms (DB: 0) | 302 Found [http://localhost/species/create]
+
+
+Processing SpeciesController#index to #<species:0x103413058> (for 127.0.0.1 at 2010-01-27 14:14:00) [GET]
+  [4;36;1mSpecies Load (0.4ms)[0m   [0;1mSELECT * FROM "species" [0m
+Rendering template within layouts/application
+Rendering species/index
+Completed in 7ms (View: 3, DB: 0) | 200 OK [http://localhost/species.%23%3Cspecies:0x103413058%3E]
+
+
+Processing SpeciesController#new (for 127.0.0.1 at 2010-01-27 14:14:03) [GET]
+Rendering template within layouts/application
+Rendering species/new
+DEPRECATION WARNING: _delete is deprecated in nested attributes. Use _destroy instead.. (called from _delete at /Users/bryce/.gems/gems/activerecord-2.3.5/lib/active_record/nested_attributes.rb:263)
+Rendered species/_character (3.5ms)
+Rendered species/_form (9.1ms)
+Completed in 71ms (View: 11, DB: 0) | 200 OK [http://localhost/species/new]
+
+
+Processing SpeciesController#create (for 127.0.0.1 at 2010-01-27 14:14:05) [POST]
+  Parameters: {"commit"=>"Submit", "authenticity_token"=>"kQED3Z/0zZ6VHSdwiFu1u6NPMPFLFq8MEDJZt3g4j9o=", "species"=>{"scientific_name"=>""}}
+Rendering template within layouts/application
+Rendering species/new
+DEPRECATION WARNING: _delete is deprecated in nested attributes. Use _destroy instead.. (called from _delete at /Users/bryce/.gems/gems/activerecord-2.3.5/lib/active_record/nested_attributes.rb:263)
+Rendered species/_character (3.4ms)
+Rendered species/_form (12.4ms)
+Completed in 20ms (View: 14, DB: 0) | 200 OK [http://localhost/species/create]
+
+
+Processing SpeciesController#create (for 127.0.0.1 at 2010-01-27 14:14:15) [POST]
+  Parameters: {"commit"=>"Submit", "authenticity_token"=>"kQED3Z/0zZ6VHSdwiFu1u6NPMPFLFq8MEDJZt3g4j9o=", "species"=>{"characters_attributes"=>{"1264630453053"=>{"name"=>"", "_delete"=>"", "unit"=>"", "value"=>""}}, "scientific_name"=>"Here you go!"}}
+  [4;35;1mSpecies Create (0.3ms)[0m   [0mINSERT INTO "species" ("created_at", "scientific_name", "updated_at") VALUES('2010-01-27 22:14:15', 'Here you go!', '2010-01-27 22:14:15')[0m
+Redirected to http://localhost:3000/species.%23%3Cspecies:0x10336b538%3E
+Completed in 56ms (DB: 0) | 302 Found [http://localhost/species/create]
+
+
+Processing SpeciesController#index to #<species:0x10336b538> (for 127.0.0.1 at 2010-01-27 14:14:15) [GET]
+  [4;36;1mSpecies Load (0.4ms)[0m   [0;1mSELECT * FROM "species" [0m
+Rendering template within layouts/application
+Rendering species/index
+Completed in 8ms (View: 4, DB: 0) | 200 OK [http://localhost/species.%23%3Cspecies:0x10336b538%3E]
+
+
+Processing SpeciesController#create (for 127.0.0.1 at 2010-01-27 14:14:21) [POST]
+  Parameters: {"commit"=>"Submit", "authenticity_token"=>"kQED3Z/0zZ6VHSdwiFu1u6NPMPFLFq8MEDJZt3g4j9o=", "species"=>{"characters_attributes"=>{"1264630459110"=>{"name"=>"What?", "_delete"=>"", "unit"=>"", "value"=>""}}, "scientific_name"=>"Here you go!"}}
+Rendering template within layouts/application
+Rendering species/new
+DEPRECATION WARNING: _delete is deprecated in nested attributes. Use _destroy instead.. (called from _delete at /Users/bryce/.gems/gems/activerecord-2.3.5/lib/active_record/nested_attributes.rb:263)
+Rendered species/_character (2.6ms)
+DEPRECATION WARNING: _delete is deprecated in nested attributes. Use _destroy instead.. (called from _delete at /Users/bryce/.gems/gems/activerecord-2.3.5/lib/active_record/nested_attributes.rb:263)
+Rendered species/_character (4.1ms)
+Rendered species/_form (11.0ms)
+Completed in 25ms (View: 13, DB: 0) | 200 OK [http://localhost/species/create]
+
+
+Processing SpeciesController#create (for 127.0.0.1 at 2010-01-27 14:14:27) [POST]
+  Parameters: {"commit"=>"Submit", "authenticity_token"=>"kQED3Z/0zZ6VHSdwiFu1u6NPMPFLFq8MEDJZt3g4j9o=", "species"=>{"characters_attributes"=>{"0"=>{"name"=>"What?", "_delete"=>"", "unit"=>"Hay", "value"=>"The"}}, "scientific_name"=>"Here you go!"}}
+  [4;35;1mSpecies Create (0.3ms)[0m   [0mINSERT INTO "species" ("created_at", "scientific_name", "updated_at") VALUES('2010-01-27 22:14:27', 'Here you go!', '2010-01-27 22:14:27')[0m
+  [4;36;1mCharacter Create (0.1ms)[0m   [0;1mINSERT INTO "characters" ("name", "created_at", "updated_at", "value", "unit", "species_id") VALUES('What?', '2010-01-27 22:14:27', '2010-01-27 22:14:27', 'The', 'Hay', 18)[0m
+Redirected to http://localhost:3000/species.%23%3Cspecies:0x1033cbff0%3E
+Completed in 60ms (DB: 0) | 302 Found [http://localhost/species/create]
+
+
+Processing SpeciesController#index to #<species:0x1033cbff0> (for 127.0.0.1 at 2010-01-27 14:14:27) [GET]
+  [4;35;1mSpecies Load (0.5ms)[0m   [0mSELECT * FROM "species" [0m
+Rendering template within layouts/application
+Rendering species/index
+Completed in 8ms (View: 4, DB: 0) | 200 OK [http://localhost/species.%23%3Cspecies:0x1033cbff0%3E]
+
+
+Processing SpeciesController#show (for 127.0.0.1 at 2010-01-27 14:14:29) [GET]
+  Parameters: {"id"=>"18"}
+  [4;36;1mSpecies Load (0.2ms)[0m   [0;1mSELECT * FROM "species" WHERE ("species"."id" = 18) [0m
+Rendering template within layouts/application
+Rendering species/show
+  [4;35;1mCharacter Load (0.2ms)[0m   [0mSELECT * FROM "characters" WHERE ("characters".species_id = 18) [0m
+Rendered species/_character_line (0.1ms)
+Completed in 67ms (View: 7, DB: 0) | 200 OK [http://localhost/species/18]
+
+
+Processing SpeciesController#edit (for 127.0.0.1 at 2010-01-27 14:16:40) [GET]
+  Parameters: {"id"=>"18"}
+  [4;36;1mSpecies Load (0.1ms)[0m   [0;1mSELECT * FROM "species" WHERE ("species"."id" = 18) [0m
+Rendering template within layouts/application
+Rendering species/edit
+  [4;35;1mCharacter Load (0.2ms)[0m   [0mSELECT * FROM "characters" WHERE ("characters".species_id = 18) [0m
+DEPRECATION WARNING: _delete is deprecated in nested attributes. Use _destroy instead.. (called from _delete at /Users/bryce/.gems/gems/activerecord-2.3.5/lib/active_record/nested_attributes.rb:263)
+Rendered species/_character (3.4ms)
+DEPRECATION WARNING: _delete is deprecated in nested attributes. Use _destroy instead.. (called from _delete at /Users/bryce/.gems/gems/activerecord-2.3.5/lib/active_record/nested_attributes.rb:263)
+Rendered species/_character (2.1ms)
+Rendered species/_form (14.6ms)
+Completed in 24ms (View: 19, DB: 0) | 200 OK [http://localhost/species/18/edit]
+
+
+Processing SpeciesController#edit (for 127.0.0.1 at 2010-01-27 14:19:18) [GET]
+  Parameters: {"id"=>"18"}
+  [4;36;1mSpecies Load (0.1ms)[0m   [0;1mSELECT * FROM "species" WHERE ("species"."id" = 18) [0m
+Rendering template within layouts/application
+Rendering species/edit
+  [4;35;1mCharacter Load (0.2ms)[0m   [0mSELECT * FROM "characters" WHERE ("characters".species_id = 18) [0m
+
+ActionView::TemplateError (Illegal nesting: nesting within plain text is illegal.) on line #11 of app/views/species/_character.haml:
+8: = f.text_field(:unit, :size => 10)
+9: 
+10: <% unless child_form.object.new_record? %>
+11:       <%= child_form.check_box '_delete' %>
+12:       <%= child_form.label '_delete', 'Remove' %>
+13:     <% end %>
+14:     
+
+    app/views/species/_character.haml:11
+    haml (2.2.17) lib/haml/precompiler.rb:343:in `push_plain'
+    haml (2.2.17) lib/haml/precompiler.rb:276:in `process_line'
+    haml (2.2.17) lib/haml/precompiler.rb:177:in `precompile'
+    haml (2.2.17) lib/haml/engine.rb:114:in `initialize'
+    haml (2.2.17) lib/haml/template/plugin.rb:24:in `new'
+    haml (2.2.17) lib/haml/template/plugin.rb:24:in `compile'
+    haml (2.2.17) lib/haml/helpers/action_view_mods.rb:11:in `render'
+    haml (2.2.17) lib/haml/helpers.rb:96:in `non_haml'
+    haml (2.2.17) lib/haml/helpers/action_view_mods.rb:11:in `render'
+    app/helpers/application_helper.rb:17:in `new_child_fields'
+    app/helpers/application_helper.rb:16:in `new_child_fields'
+    app/helpers/application_helper.rb:8:in `add_child_link'
+    app/views/species/_form.haml:14:in `_run_haml_app47views47species47_form46haml_locals_action_form_object_put'
+    haml (2.2.17) lib/haml/helpers/action_view_mods.rb:164:in `call'
+    haml (2.2.17) lib/haml/helpers/action_view_mods.rb:164:in `form_for'
+    haml (2.2.17) lib/haml/helpers.rb:545:in `call'
+    haml (2.2.17) lib/haml/helpers.rb:545:in `haml_bind_proc'
+    haml (2.2.17) lib/haml/helpers/action_view_mods.rb:170:in `form_for'
+    app/views/species/_form.haml:1:in `_run_haml_app47views47species47_form46haml_locals_action_form_object_put'
+    haml (2.2.17) lib/haml/helpers/action_view_mods.rb:11:in `render'
+    haml (2.2.17) lib/haml/helpers.rb:96:in `non_haml'
+    haml (2.2.17) lib/haml/helpers/action_view_mods.rb:11:in `render'
+    app/views/species/edit.haml:2:in `_run_haml_app47views47species47edit46haml'
+    haml (2.2.17) lib/haml/helpers/action_view_mods.rb:13:in `render'
+    haml (2.2.17) lib/haml/helpers/action_view_mods.rb:13:in `render'
+    haml (2.2.17) lib/sass/plugin/rails.rb:19:in `process'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (54.6ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing SpeciesController#edit (for 127.0.0.1 at 2010-01-27 14:19:25) [GET]
+  Parameters: {"id"=>"18"}
+  [4;36;1mSpecies Load (0.1ms)[0m   [0;1mSELECT * FROM "species" WHERE ("species"."id" = 18) [0m
+Rendering template within layouts/application
+Rendering species/edit
+  [4;35;1mCharacter Load (0.2ms)[0m   [0mSELECT * FROM "characters" WHERE ("characters".species_id = 18) [0m
+Rendered species/_character (4.1ms)
+DEPRECATION WARNING: _delete is deprecated in nested attributes. Use _destroy instead.. (called from _delete at /Users/bryce/.gems/gems/activerecord-2.3.5/lib/active_record/nested_attributes.rb:263)
+Rendered species/_character (2.6ms)
+Rendered species/_form (16.6ms)
+Completed in 23ms (View: 19, DB: 0) | 200 OK [http://localhost/species/18/edit]
+
+
+Processing SpeciesController#update (for 127.0.0.1 at 2010-01-27 14:19:29) [PUT]
+  Parameters: {"commit"=>"Submit", "authenticity_token"=>"kQED3Z/0zZ6VHSdwiFu1u6NPMPFLFq8MEDJZt3g4j9o=", "id"=>"18", "species"=>{"characters_attributes"=>{"0"=>{"name"=>"What?", "_delete"=>"1", "id"=>"9", "unit"=>"Hay", "value"=>"The"}}, "scientific_name"=>"Here you go!"}}
+  [4;36;1mSpecies Load (0.2ms)[0m   [0;1mSELECT * FROM "species" WHERE ("species"."id" = 18) [0m
+  [4;35;1mCharacter Load (0.3ms)[0m   [0mSELECT * FROM "characters" WHERE ("characters".species_id = 18) [0m
+  [4;36;1mCharacter Destroy (0.3ms)[0m   [0;1mDELETE FROM "characters" WHERE "id" = 9[0m
+Redirected to http://localhost:3000/species/18
+Completed in 24ms (DB: 1) | 302 Found [http://localhost/species/18]
+
+
+Processing SpeciesController#show (for 127.0.0.1 at 2010-01-27 14:19:29) [GET]
+  Parameters: {"id"=>"18"}
+  [4;35;1mSpecies Load (0.1ms)[0m   [0mSELECT * FROM "species" WHERE ("species"."id" = 18) [0m
+Rendering template within layouts/application
+Rendering species/show
+  [4;36;1mCharacter Load (0.1ms)[0m   [0;1mSELECT * FROM "characters" WHERE ("characters".species_id = 18) [0m
+Completed in 9ms (View: 5, DB: 0) | 200 OK [http://localhost/species/18]
+
+
+Processing SpeciesController#edit (for 127.0.0.1 at 2010-01-27 14:19:31) [GET]
+  Parameters: {"id"=>"18"}
+  [4;35;1mSpecies Load (0.1ms)[0m   [0mSELECT * FROM "species" WHERE ("species"."id" = 18) [0m
+Rendering template within layouts/application
+Rendering species/edit
+  [4;36;1mCharacter Load (0.1ms)[0m   [0;1mSELECT * FROM "characters" WHERE ("characters".species_id = 18) [0m
+Rendered species/_character (2.7ms)
+Rendered species/_form (8.5ms)
+Completed in 15ms (View: 10, DB: 0) | 200 OK [http://localhost/species/18/edit]
+
+
+Processing SpeciesController#update (for 127.0.0.1 at 2010-01-27 14:19:44) [PUT]
+  Parameters: {"commit"=>"Submit", "authenticity_token"=>"kQED3Z/0zZ6VHSdwiFu1u6NPMPFLFq8MEDJZt3g4j9o=", "id"=>"18", "species"=>{"characters_attributes"=>{"1264630783255"=>{"name"=>"", "unit"=>"", "value"=>""}, "1264630774121"=>{"name"=>"", "unit"=>"", "value"=>""}, "1264630782791"=>{"name"=>"", "unit"=>"", "value"=>""}, "1264630775411"=>{"name"=>"", "unit"=>"", "value"=>""}}, "scientific_name"=>"Here you go!"}}
+  [4;35;1mSpecies Load (0.1ms)[0m   [0mSELECT * FROM "species" WHERE ("species"."id" = 18) [0m
+Redirected to http://localhost:3000/species/18
+Completed in 6ms (DB: 0) | 302 Found [http://localhost/species/18]
+
+
+Processing SpeciesController#show (for 127.0.0.1 at 2010-01-27 14:19:44) [GET]
+  Parameters: {"id"=>"18"}
+  [4;36;1mSpecies Load (0.1ms)[0m   [0;1mSELECT * FROM "species" WHERE ("species"."id" = 18) [0m
+Rendering template within layouts/application
+Rendering species/show
+  [4;35;1mCharacter Load (0.1ms)[0m   [0mSELECT * FROM "characters" WHERE ("characters".species_id = 18) [0m
+Completed in 9ms (View: 5, DB: 0) | 200 OK [http://localhost/species/18]
+
+
+Processing SpeciesController#index (for 127.0.0.1 at 2010-01-27 14:19:47) [GET]
+  [4;36;1mSpecies Load (0.5ms)[0m   [0;1mSELECT * FROM "species" [0m
+Rendering template within layouts/application
+Rendering species/index
+Completed in 8ms (View: 4, DB: 0) | 200 OK [http://localhost/species]
+
+
+Processing SpeciesController#destroy (for 127.0.0.1 at 2010-01-27 14:19:54) [DELETE]
+  Parameters: {"authenticity_token"=>"kQED3Z/0zZ6VHSdwiFu1u6NPMPFLFq8MEDJZt3g4j9o=", "id"=>"15"}
+  [4;35;1mSpecies Load (0.1ms)[0m   [0mSELECT * FROM "species" WHERE ("species"."id" = 15) [0m
+  [4;36;1mCharacter Load (0.3ms)[0m   [0;1mSELECT * FROM "characters" WHERE ("characters".species_id = 15) [0m
+  [4;35;1mCharacter Destroy (0.2ms)[0m   [0mDELETE FROM "characters" WHERE "id" = 7[0m
+  [4;36;1mCharacter Destroy (0.0ms)[0m   [0;1mDELETE FROM "characters" WHERE "id" = 8[0m
+  [4;35;1mSpecies Destroy (0.1ms)[0m   [0mDELETE FROM "species" WHERE "id" = 15[0m
+Redirected to http://localhost:3000/species
+Completed in 65ms (DB: 1) | 302 Found [http://localhost/species/15]
+
+
+Processing SpeciesController#index (for 127.0.0.1 at 2010-01-27 14:19:54) [GET]
+  [4;36;1mSpecies Load (0.4ms)[0m   [0;1mSELECT * FROM "species" [0m
+Rendering template within layouts/application
+Rendering species/index
+Completed in 8ms (View: 4, DB: 0) | 200 OK [http://localhost/species]
+
+
+Processing SpeciesController#destroy (for 127.0.0.1 at 2010-01-27 14:19:56) [DELETE]
+  Parameters: {"authenticity_token"=>"kQED3Z/0zZ6VHSdwiFu1u6NPMPFLFq8MEDJZt3g4j9o=", "id"=>"16"}
+  [4;35;1mSpecies Load (0.2ms)[0m   [0mSELECT * FROM "species" WHERE ("species"."id" = 16) [0m
+  [4;36;1mCharacter Load (0.1ms)[0m   [0;1mSELECT * FROM "characters" WHERE ("characters".species_id = 16) [0m
+  [4;35;1mSpecies Destroy (0.2ms)[0m   [0mDELETE FROM "species" WHERE "id" = 16[0m
+Redirected to http://localhost:3000/species
+Completed in 62ms (DB: 0) | 302 Found [http://localhost/species/16]
+
+
+Processing SpeciesController#index (for 127.0.0.1 at 2010-01-27 14:19:56) [GET]
+  [4;36;1mSpecies Load (0.4ms)[0m   [0;1mSELECT * FROM "species" [0m
+Rendering template within layouts/application
+Rendering species/index
+Completed in 8ms (View: 4, DB: 0) | 200 OK [http://localhost/species]
+
+
+Processing SpeciesController#destroy (for 127.0.0.1 at 2010-01-27 14:19:58) [DELETE]
+  Parameters: {"authenticity_token"=>"kQED3Z/0zZ6VHSdwiFu1u6NPMPFLFq8MEDJZt3g4j9o=", "id"=>"17"}
+  [4;35;1mSpecies Load (0.2ms)[0m   [0mSELECT * FROM "species" WHERE ("species"."id" = 17) [0m
+  [4;36;1mCharacter Load (0.1ms)[0m   [0;1mSELECT * FROM "characters" WHERE ("characters".species_id = 17) [0m
+  [4;35;1mSpecies Destroy (0.2ms)[0m   [0mDELETE FROM "species" WHERE "id" = 17[0m
+Redirected to http://localhost:3000/species
+Completed in 57ms (DB: 0) | 302 Found [http://localhost/species/17]
+
+
+Processing SpeciesController#index (for 127.0.0.1 at 2010-01-27 14:19:58) [GET]
+  [4;36;1mSpecies Load (0.4ms)[0m   [0;1mSELECT * FROM "species" [0m
+Rendering template within layouts/application
+Rendering species/index
+Completed in 7ms (View: 3, DB: 0) | 200 OK [http://localhost/species]
+
+
+Processing SpeciesController#destroy (for 127.0.0.1 at 2010-01-27 14:20:00) [DELETE]
+  Parameters: {"authenticity_token"=>"kQED3Z/0zZ6VHSdwiFu1u6NPMPFLFq8MEDJZt3g4j9o=", "id"=>"18"}
+  [4;35;1mSpecies Load (0.1ms)[0m   [0mSELECT * FROM "species" WHERE ("species"."id" = 18) [0m
+  [4;36;1mCharacter Load (0.1ms)[0m   [0;1mSELECT * FROM "characters" WHERE ("characters".species_id = 18) [0m
+  [4;35;1mSpecies Destroy (0.2ms)[0m   [0mDELETE FROM "species" WHERE "id" = 18[0m
+Redirected to http://localhost:3000/species
+Completed in 60ms (DB: 0) | 302 Found [http://localhost/species/18]
+
+
+Processing SpeciesController#index (for 127.0.0.1 at 2010-01-27 14:20:00) [GET]
+  [4;36;1mSpecies Load (0.3ms)[0m   [0;1mSELECT * FROM "species" [0m
+Rendering template within layouts/application
+Rendering species/index
+Completed in 5ms (View: 1, DB: 0) | 200 OK [http://localhost/species]

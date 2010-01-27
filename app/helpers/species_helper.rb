@@ -1,7 +1,7 @@
 module SpeciesHelper
   def add_character_link(name)
     link_to_function(name, :class => "action") do |page|
-      page.insert_html(:bottom, :characters, :partial => 'species/forms/character', :locals => {:character => Character.new })
+      page.insert_html(:bottom, :characters, :partial => 'character', :locals => {:character => Character.new })
     end
   end
   
