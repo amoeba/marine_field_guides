@@ -1,22 +1,12 @@
-- form_for(:species, @species, :url => action, :method => 'post') do |f|
+- form_for(:species, @species, :url => url, :html => {:method => method, :multipart => true}) do |f|
   = f.error_messages
   
-  - if put 
-    %input{:name => "_method", :type => "hidden", :value => "put"}
-  
-  %h3 General Attributes
-  = f.label(:scientific_name)
-  = f.text_field(:scientific_name)
-  %br
-  
   %div.group
-    %h3 Character Traits
-    = add_child_link("Add a Character Trait", f, :characters)
-    %br
-    
-    %ul#characters
-      - f.fields_for(:characters) do |characters_form|
-        %li= render(:partial => 'character', :locals => { :f => characters_form})
-    
-
+    %h3 General Attributes
+    = f.label(:scientific_name)
+    = f.text_field(:scientific_name)
+  
+  - [:abundances, :characters, :common_names, :distinguishing_characters, :habitats, :images, :natural_histories, :similar_species, :synonyms].each do |model|
+    = render(:partial => 'subform', :locals => {:model => model, :f => f, :partial => "species/forms/#{model.to_s.singularize}"})
+  
   = f.submit "Submit"

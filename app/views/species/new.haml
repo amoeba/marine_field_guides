@@ -1,2 +1,2 @@
 %h2 Create single Species
-= render :partial => 'form', :locals => { :action => '/species/create', :put => false}
+= render :partial => 'form', :locals => { :url => species_url, :method => :post}

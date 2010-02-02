@@ -9,7 +9,14 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100126195240) do
+ActiveRecord::Schema.define(:version => 20100202201856) do
+
+  create_table "abundances", :force => true do |t|
+    t.integer  "species_id"
+    t.string   "value"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "characters", :force => true do |t|
     t.integer  "species_id"
@@ -20,8 +27,75 @@ ActiveRecord::Schema.define(:version => 20100126195240) do
     t.datetime "updated_at"
   end
 
+  create_table "common_names", :force => true do |t|
+    t.integer  "species_id"
+    t.string   "value"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "distinguishing_characters", :force => true do |t|
+    t.integer  "species_id"
+    t.text     "value"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "distributions", :force => true do |t|
+    t.integer  "species_id"
+    t.string   "value"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "habitats", :force => true do |t|
+    t.integer  "species_id"
+    t.string   "value"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "images", :force => true do |t|
+    t.integer  "species_id"
+    t.string   "image_file_name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "natural_histories", :force => true do |t|
+    t.integer  "species_id"
+    t.text     "value"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "similar_species", :force => true do |t|
+    t.integer  "species_id"
+    t.integer  "similar_species_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "species", :force => true do |t|
     t.string   "scientific_name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "synonyms", :force => true do |t|
+    t.integer  "species_id"
+    t.string   "value"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "taxonomies", :force => true do |t|
+    t.integer  "species_id"
+    t.string   "kingdom"
+    t.string   "phylum"
+    t.string   "class"
+    t.string   "order"
+    t.string   "family"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

@@ -6,6 +6,43 @@
 Scientific Name:
 %em= "#{@species.scientific_name}"
 
+%h3 Abundance
+%ul
+  = render(:partial => 'species/attributes/abundance', :collection => @species.abundances)
+
 %h3 Character Traits
 %ul
-  = render(:partial => 'character_line', :collection => @species.characters)
+  = render(:partial => 'species/attributes/character', :collection => @species.characters)
+  
+%h3 Common Names
+%ul
+  = render(:partial => 'species/attributes/common_name', :collection => @species.common_names)
+
+
+%h3 Distribution
+%ul
+  = render(:partial => 'species/attributes/distribution', :collection => @species.distribution)
+
+%h3 Habitat
+%ul
+  = render(:partial => 'species/attributes/habitat', :collection => @species.habitats)
+
+%h3 Images
+%ul
+  = render(:partial => 'species/attributes/image', :collection => @species.images)
+  
+%h3 Natural History
+%ul
+  = render(:partial => 'species/attributes/natural_history', :collection => @species.natural_histories)
+
+%h3 Similar Species
+%ul
+  = render(:partial => 'species/attributes/similar_species', :collection => @species.similar_species)
+
+%h3 Synonym
+%ul
+  = render(:partial => 'species/attributes/synonym', :collection => @species.synonyms)
+
+%h3 Taxonomy
+%ul
+  = render(:partial => 'species/attributes/taxonomy', :collection => @species.taxonomy)

@@ -1,2 +1,2 @@
 %h2 Edit single Species
-= render :partial => 'form', :locals => { :action => species_instance_url(@species), :put => true}
+= render :partial => 'form', :locals => { :url => species_instance_url(@species), :method => :put}

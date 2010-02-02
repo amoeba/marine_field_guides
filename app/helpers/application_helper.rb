@@ -1,11 +1,11 @@
 # Methods added to this helper will be available to all templates in the application.
 module ApplicationHelper
   def remove_child_link(name, f)
-    f.hidden_field(:_delete) + link_to_function(name, "remove_fields(this)")
+    f.hidden_field(:_destroy) + link_to_function(name, "remove_fields(this)")
   end
   
-  def add_child_link(name, f, method)
-    fields = new_child_fields(f, method)
+  def add_child_link(name, f, method, options = {})
+    fields = new_child_fields(f, method, options)
     link_to_function(name, h("insert_fields(this, \"#{method}\", \"#{escape_javascript(fields)}\")"))
   end
   

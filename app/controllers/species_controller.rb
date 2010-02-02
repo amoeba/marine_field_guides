@@ -15,7 +15,7 @@ class SpeciesController < ApplicationController
     @species = Species.new(params[:species])
     
     if(@species.save)
-      flash[:notice] = "Successfully created Species and ____"
+      flash[:notice] = "Successfully created Species"
       redirect_to(@species)
     else
       render(:action => "new")
@@ -30,7 +30,7 @@ class SpeciesController < ApplicationController
     @species = Species.find(params[:id])
     
     if(@species.update_attributes(params[:species]))
-      flash[:notice] = "Successfully updated Species and ____"
+      flash[:notice] = "Successfully updated Species"
       redirect_to(species_instance_url(@species))
     else
       render(:action => 'edit')
@@ -40,7 +40,7 @@ class SpeciesController < ApplicationController
   def destroy
     @species = Species.find(params[:id])
     @species.destroy
-    flash[:notice] = "Successfully destroyed Species"
+    flash[:notice] = "Successfully deleted Species"
     redirect_to(species_url)
   end
 end

@@ -8,3 +8,9 @@
 #   inflect.irregular 'person', 'people'
 #   inflect.uncountable %w( fish sheep )
 # end
+
+
+ActiveSupport::Inflector.inflections do |inflection|
+  inflection.singular /(SimilarSpecies)/i, '\1'
+  inflection.uncountable 'species', 'similar_species', 'distinguishing_characters'
+end   

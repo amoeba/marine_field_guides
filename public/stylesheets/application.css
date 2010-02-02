@@ -29,3 +29,8 @@ a.action, #header a {
   display: inline; }
   .fieldWithErrors input {
     border: 1px solid red; }
+
+.notice {
+  background-color: #cfc;
+  display: inline;
+  padding: 0.75em; }
