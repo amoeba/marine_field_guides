@@ -4,7 +4,7 @@ class CreateTaxonomies < ActiveRecord::Migration
       t.integer :species_id
       t.string :kingdom
       t.string :phylum
-      t.string :class
+      t.string :klass
       t.string :order
       t.string :family
       t.timestamps

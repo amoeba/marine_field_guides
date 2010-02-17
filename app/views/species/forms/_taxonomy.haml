@@ -1,19 +1,19 @@
-= f.label(:kingdom)
-= f.text_field(:kingdom, :size => "25")
+%ul
+  %li
+    = f.label(:kingdom)
+    = f.text_field(:kingdom, :size => "25")
+  %li
+    = f.label(:phylum)
+    = f.text_field(:phylum, :size => "25")
 
-= f.label(:phylum)
-= f.text_field(:phylum, :size => "25")
+  %li
+    = f.label(:order)
+    = f.text_field(:order, :size => "25")
 
-= f.label(:class)
-= f.text_field(:class, :size => "25")
+  %li
+    = f.label(:klass, "Class")
+    = f.text_field(:klass, :size => "25")
 
-= f.label(:order)
-= f.text_field(:order, :size => "25")
-
-= f.label(:family)
-= f.text_field(:family, :size => "25")
-    
-- unless f.object.new_record?
-  = f.check_box('_destroy')
-  = f.label('_destroy', 'Remove')
-%br
+  %li
+    = f.label(:family)
+    = f.text_field(:family, :size => "25")
