@@ -1,4 +1,4 @@
-class CreateDistinguishingCharacters < ActiveRecord::Migration
+class CreateDistinguishingCharacter < ActiveRecord::Migration
   def self.up
     create_table :distinguishing_characters do |t|
       t.integer :species_id
