@@ -5,7 +5,7 @@ module SpeciesHelper
   
   def add_child_link(name, f, method, options = {})
     fields = new_child_fields(f, method, options)
-    link_to_function(name, h("insert_fields(this, \"#{method}\", \"#{escape_javascript(fields)}\")"))
+    button_to_function "Add", "insert_fields(this, '#{method}', '#{escape_javascript(fields)}')"
   end
   
   def new_child_fields(form_builder, method, options = {})
