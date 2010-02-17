@@ -1,0 +1,5 @@
+%h2 Search
+- form_tag '/search' do
+  = add_filter_button
+  = render :partial => "filter"
+  = submit_tag 'Submit'

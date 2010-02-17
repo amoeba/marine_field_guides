@@ -1,0 +1,6 @@
+= label_tag "attribute"
+= text_field_tag 'attribute'
+= label_tag "operation"
+= select_tag "operation", %w[equal less greater not].map { |o| "<option value=\"#{o}\">#{o}</option>"}
+= label_tag "value"
+= text_field_tag 'value'
