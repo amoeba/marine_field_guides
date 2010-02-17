@@ -12,9 +12,7 @@ class Species < ActiveRecord::Base
   end
   
   has_one :taxonomy, :dependent => :destroy
-  
   accepts_nested_attributes_for :taxonomy,
     :reject_if => lambda { |a| a.values.all?(&:blank?) },
     :allow_destroy => true
-  
 end
