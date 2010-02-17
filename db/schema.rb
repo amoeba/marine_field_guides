@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100202201856) do
+ActiveRecord::Schema.define(:version => 20100209225342) do
 
   create_table "abundances", :force => true do |t|
     t.integer  "species_id"
@@ -25,6 +25,7 @@ ActiveRecord::Schema.define(:version => 20100202201856) do
     t.string   "unit"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "morph"
   end
 
   create_table "common_names", :force => true do |t|
@@ -93,7 +94,7 @@ ActiveRecord::Schema.define(:version => 20100202201856) do
     t.integer  "species_id"
     t.string   "kingdom"
     t.string   "phylum"
-    t.string   "class"
+    t.string   "klass"
     t.string   "order"
     t.string   "family"
     t.datetime "created_at"
