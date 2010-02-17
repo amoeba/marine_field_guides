@@ -1,11 +1,15 @@
 %h2 Displaying single Species
 %p
-  = link_to("edit", edit_species_instance_path(@species), :class => "action")
-  = link_to("delete", species_instance_path(@species), :method => 'delete', :confirm => "Are you sure?", :class => "action")
+  = link_to("edit", edit_species_path(@species), :class => "action")
+  = link_to("delete", species_path(@species), :method => 'delete', :confirm => "Are you sure?", :class => "action")
 
-Scientific Name:
+%strong Scientific Name:
 %em= "#{@species.scientific_name}"
 
+%h3 Taxonomy
+%ul
+  = render(:partial => 'species/attributes/taxonomy', :locals => { :taxonomy => @species.taxonomy })
+  
 %h3 Abundance
 %ul
   = render(:partial => 'species/attributes/abundance', :collection => @species.abundances)
@@ -18,6 +22,9 @@ Scientific Name:
 %ul
   = render(:partial => 'species/attributes/common_name', :collection => @species.common_names)
 
+
+%h3 Distinguishing Characters
+%ul= render(:partial => 'species/attributes/distinguishing_characters', :collection => @species.distinguishing_characters)
 
 %h3 Distribution
 %ul
@@ -42,7 +49,3 @@ Scientific Name:
 %h3 Synonym
 %ul
   = render(:partial => 'species/attributes/synonym', :collection => @species.synonyms)
-
-%h3 Taxonomy
-%ul
-  = render(:partial => 'species/attributes/taxonomy', :collection => @species.taxonomy)
