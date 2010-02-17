@@ -1,8 +1,8 @@
 %div.group
   %h3
     = model.to_s.singularize.humanize
-    = add_child_link("Add", f, model, { :partial => partial })
+    = add_child_link("Add", f, model, { :partial => "species/forms/#{partial}" })
 
   %ul{:id => model}
     - f.fields_for(model) do |subform|
-      %li= render(:partial => partial, :locals => { :f => subform})
+      %li= render(:partial => "species/forms/#{partial}", :locals => { :f => subform})
