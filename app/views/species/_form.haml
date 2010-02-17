@@ -6,7 +6,11 @@
     = f.label(:scientific_name)
     = f.text_field(:scientific_name)
   
-  - [:abundances, :characters, :common_names, :distinguishing_characters, :habitats, :images, :natural_histories, :similar_species, :synonyms].each do |model|
-    = render(:partial => 'subform', :locals => {:model => model, :f => f, :partial => "species/forms/#{model.to_s.singularize}"})
+  %div.group
+    %h3 Taxonomy
+    - f.fields_for(:taxonomy) do |t|
+      = render(:partial => 'species/forms/taxonomy', :locals => { :f => t})
   
-  = f.submit "Submit"
+  - [:abundances, :characters, :common_names, :distinguishing_characters, :distribution, :habitats, :images, :natural_histories, :similar_species, :synonyms].each do |model|
+    = render(:partial => 'subform', :locals => {:model => model, :f => f, :partial => "#{model.to_s.singularize}"})
+  = f.submit
