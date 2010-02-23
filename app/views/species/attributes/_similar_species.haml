@@ -1,1 +1,2 @@
-%li= similar_species.similar_species_id
+%li
+  %a{:href => species_path(similar_species.similar_species_id)}= "#{similar_species.scientific_name} (#TODO#)"
