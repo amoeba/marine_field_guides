@@ -122,7 +122,7 @@ class ExtendedGuide < Guide
       pdf.text "Taxonomy (Phylum, Class, Order, Family)", :leading => 2.5
       pdf.indent 20 do  
         pdf.fill_color = "000000"
-        pdf.text species.taxonomy.to_long_string, :leading => 2.5
+        pdf.text "species.taxonomy", :leading => 2.5
       end
       pdf.fill_color = "767876"
       pdf.text "Similar species", :leading => 2.5

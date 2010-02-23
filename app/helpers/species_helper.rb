@@ -16,4 +16,8 @@ module SpeciesHelper
       render(:partial => options[:partial], :locals => { options[:form_builder_local] => f })
     end
   end
+  
+  def subform(f, model)
+    render(:partial => 'subform', :locals => {:model => model, :f => f, :partial => "#{model.to_s.singularize}"})
+  end
 end
