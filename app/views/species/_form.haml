@@ -1,3 +1,6 @@
+= javascript_include_tag("jquery.autocomplete")
+= javascript_include_tag("similar_species")
+
 - form_for(:species, @species, :url => url, :html => {:method => method, :multipart => true}) do |f|
   = f.error_messages
   
@@ -9,8 +12,17 @@
   %div.group
     %h3 Taxonomy
     - f.fields_for(:taxonomy) do |t|
-      = render(:partial => 'species/forms/taxonomy', :locals => { :f => t})
-  
-  - [:abundances, :characters, :common_names, :distinguishing_characters, :distribution, :habitats, :images, :natural_histories, :similar_species, :synonyms].each do |model|
-    = render(:partial => 'subform', :locals => {:model => model, :f => f, :partial => "#{model.to_s.singularize}"})
+      = render(:partial => 'species/forms/taxonomy', :locals => { :f => t})    
+    
+    = subform(f, :abundances)
+    = subform(f, :characters)
+    = subform(f, :common_names)
+    = subform(f, :distinguishing_characters)
+    = subform(f, :distribution)
+    = subform(f, :habitats)
+    = subform(f, :images)
+    = subform(f, :natural_histories)
+    = subform(f, :similar_species)
+    = subform(f, :synonyms)
+    
   = f.submit
