@@ -1,19 +1,58 @@
 %ul
   %li
+    = f.label(:domain)
+    = f.text_field(:domain, :size => "25")
+  %li
     = f.label(:kingdom)
     = f.text_field(:kingdom, :size => "25")
   %li
-    = f.label(:phylum)
-    = f.text_field(:phylum, :size => "25")
-
+    = f.label(:subkingdom)
+    = f.text_field(:subkingdom, :size => "25")
   %li
-    = f.label(:order)
-    = f.text_field(:order, :size => "25")
-
+    = f.label(:superphylum, "Superphylum/Superdivision")
+    = f.text_field(:superphylum, :size => "25")
+  %li
+    = f.label(:phylum, "Phylum/Division")
+    = f.text_field(:phylum, :size => "25")
+  %li
+    = f.label(:subphylum, "Subphylum/Subdivision")
+    = f.text_field(:subphylum, :size => "25")
+  %li
+    = f.label(:superclass)
+    = f.text_field(:superclass, :size => "25")
   %li
     = f.label(:klass, "Class")
     = f.text_field(:klass, :size => "25")
-
   %li
-    = f.label(:family)
+    = f.label(:subclass)
+    = f.text_field(:subclass, :size => "25")
+  %li
+    = f.label(:superorder)
+    = f.text_field(:superorder, :size => "25")
+  %li
+    = f.label(:order)
+    = f.text_field(:order, :size => "25")
+  %li
+    = f.label(:suborder)
+    = f.text_field(:suborder, :size => "25")
+  %li
+    = f.label(:superfamily)
+    = f.text_field(:superfamily, :size => "25")
+  %li
+    = f.label(:familiy)
     = f.text_field(:family, :size => "25")
+  %li
+    = f.label(:subfamily)
+    = f.text_field(:subfamily, :size => "25")
+  %li
+    = f.label(:genus)
+    = f.text_field(:genus, :size => "25")
+  %li
+    = f.label(:species_name, "Species")
+    = f.text_field(:species_name, :size => "25")
+  %li
+    = f.label(:subspecies)
+    = f.text_field(:subspecies, :size => "25")
+  
+
+    

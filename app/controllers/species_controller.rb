@@ -6,25 +6,38 @@ class SpeciesController < ApplicationController
   end
   
   def show
-    respond_with(@species = Species.find(params[:id]))
+    @species = Species.find(params[:id])
+    @species.build_taxonomy unless @species.taxonomy
+    
+    respond_with(@species)
   end
   
   def new
-    respond_with(@species = Species.new)
+    @species = Species.new
+    @species.build_taxonomy
+    
+    respond_with(@species)
   end
   
   def create
     @species = Species.create(params[:species])
+    @species.build_taxonomy unless @species.taxonomy
+    
     respond_with(@species)
   end
   
   def edit
-    respond_with(@species = Species.find(params[:id]))
+    @species = Species.find(params[:id])
+    @species.build_taxonomy unless @species.taxonomy
+    
+    respond_with(@species)
   end
   
   def update
     @species = Species.find(params[:id])
+    @species.build_taxonomy unless @species.taxonomy
     @species.update_attributes(params[:species])
+    
     respond_with(@species)
   end
   

@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100209225342) do
+ActiveRecord::Schema.define(:version => 20100223222428) do
 
   create_table "abundances", :force => true do |t|
     t.integer  "species_id"
@@ -99,6 +99,19 @@ ActiveRecord::Schema.define(:version => 20100209225342) do
     t.string   "family"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "domain"
+    t.string   "subkingdom"
+    t.string   "superphylum"
+    t.string   "subphylum"
+    t.string   "superclass"
+    t.string   "subclass"
+    t.string   "superorder"
+    t.string   "suborder"
+    t.string   "superfamily"
+    t.string   "subfamily"
+    t.string   "genus"
+    t.string   "species_name"
+    t.string   "subspecies"
   end
 
 end
