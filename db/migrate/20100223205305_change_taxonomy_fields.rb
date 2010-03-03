@@ -22,24 +22,24 @@ class ChangeTaxonomyFields < ActiveRecord::Migration
   end
 
   def self.down
-    drop_column :taxonomies, :domain
-    drop_column :taxonomies, :subkingdom
+    remove_column :taxonomies, :domain
+    remove_column :taxonomies, :subkingdom
     
-    drop_column :taxonomies, :superphylum
-    drop_column :taxonomies, :subphylum
+    remove_column :taxonomies, :superphylum
+    remove_column :taxonomies, :subphylum
     
-    drop_column :taxonomies, :superclass
-    drop_column :taxonomies, :subclass
+    remove_column :taxonomies, :superclass
+    remove_column :taxonomies, :subclass
     
-    drop_column :taxonomies, :superorder
-    drop_column :taxonomies, :suborder
+    remove_column :taxonomies, :superorder
+    remove_column :taxonomies, :suborder
     
-    drop_column :taxonomies, :superfamily
-    drop_column :taxonomies, :subfamily
+    remove_column :taxonomies, :superfamily
+    remove_column :taxonomies, :subfamily
     
-    drop_column :taxonomies, :genus
-    drop_column :taxonomies, :species
+    remove_column :taxonomies, :genus
+    remove_column :taxonomies, :species
     
-    drop_column :taxonomies, :subspecies
+    remove_column :taxonomies, :subspecies
   end
 end
