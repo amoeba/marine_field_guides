@@ -24,5 +24,7 @@ gem "sqlite3-ruby", :require => "sqlite3"
 # end
 
 gem 'haml'
-gem 'paperclip', :git => "git://github.com/thoughtbot/paperclip", :branch => "rails3"
+gem 'paperclip', 
+  :git => "git://github.com/thoughtbot/paperclip", 
+  :branch => "rails3"
 gem 'prawn', :require => 'prawn/core'  

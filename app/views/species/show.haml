@@ -6,6 +6,13 @@
 %strong Scientific Name:
 %em= "#{@species.scientific_name}"
 
+%h3 Display Image
+- if @display_image
+  %img{:src => @display_image.image, :height => "100px"}
+- else
+  No display image chosen
+  
+
 %h3 Taxonomy
 %ul
   = render(:partial => 'species/attributes/taxonomy', :locals => { :taxonomy => @species.taxonomy })

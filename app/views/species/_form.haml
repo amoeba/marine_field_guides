@@ -3,12 +3,17 @@
 
 - form_for(:species, @species, :url => url, :html => {:method => method, :multipart => true}) do |f|
   = f.error_messages
-  
+
   %div.group
     %h3 General Attributes
-    = f.label(:scientific_name)
-    = f.text_field(:scientific_name)
-  
+    
+    %h4 Display Image
+    %ul
+      - @species.images.each do |image|
+        %li
+          = f.label(:display_image, "<img src=\"#{image.image}\" height=\"100px\" />")
+          = f.radio_button(:display_image, image.id)
+      
   %div.group
     %h3 Taxonomy
     - f.fields_for(:taxonomy) do |subform|

@@ -7,7 +7,8 @@ class SpeciesController < ApplicationController
   
   def show
     @species = Species.find(params[:id])
-    @species.build_taxonomy unless @species.taxonomy
+    
+    @display_image = @species.images.select { |i| i.id == @species.display_image }.first
     
     respond_with(@species)
   end
@@ -20,22 +21,25 @@ class SpeciesController < ApplicationController
   end
   
   def create
-    @species = Species.create(params[:species])
-    @species.build_taxonomy unless @species.taxonomy
-    
+    # Workaround
+    # Without this, validations aren't running on Taxonomy
+    #@species = Species.create(params[:species])
+    @species = Species.new
+    @species.build_taxonomy
+    @species.save
+    @species.update_attributes(params[:species])
+
     respond_with(@species)
   end
   
   def edit
     @species = Species.find(params[:id])
-    @species.build_taxonomy unless @species.taxonomy
     
     respond_with(@species)
   end
   
   def update
     @species = Species.find(params[:id])
-    @species.build_taxonomy unless @species.taxonomy
     @species.update_attributes(params[:species])
     
     respond_with(@species)
@@ -44,6 +48,7 @@ class SpeciesController < ApplicationController
   def destroy
     @species = Species.find(params[:id])
     @species.destroy
+    
     redirect_to(:controller => :species)
   end
 end

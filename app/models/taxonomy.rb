@@ -1,8 +1,8 @@
 class Taxonomy < ActiveRecord::Base
   belongs_to :species
-  validates_presence_of :genus, :species
+  validates :genus, :species_name, :presence => true
   
   def to_s
-    "#{phylum} > #{klass} > #{order} > #{family}"
+    "#TODO#"
   end
 end
