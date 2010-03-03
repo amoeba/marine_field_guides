@@ -1,19 +1,56 @@
-%li
-  = "Domain: `#{taxonomy.domain}`, "
-  = "Kingdom: `#{taxonomy.kingdom}`, "
-  = "Subkingdom: `#{taxonomy.subkingdom}`, "
-  = "Superphylum/Superdivision: `#{taxonomy.superphylum}`, "
-  = "Phylum/Division: `#{taxonomy.phylum}`, "
-  = "Subphylum/Subdivision: `#{taxonomy.subphylum}`, "
-  = "Superclass: `#{taxonomy.superclass}`"
-  = "Class: `#{taxonomy.klass}`"
-  = "Subclass: `#{taxonomy.subclass}`"
-  = "Superorder: `#{taxonomy.superorder}`, "
-  = "Order: `#{taxonomy.order}`, "
-  = "Suborder: `#{taxonomy.suborder}`, "
-  = "Superfamily: `#{taxonomy.superfamily}`, "
-  = "Family: `#{taxonomy.family}`, "
-  = "Subfamily: `#{taxonomy.subfamily}`, "
-  = "Genus: `#{taxonomy.genus}`, "
-  = "Species: `#{taxonomy.species_name}`, "
-  = "Subspecies: `#{taxonomy.subspecies}`"
+%table
+  %tbody
+    %tr
+      %td Domain
+      %td= taxonomy.domain
+    %tr  
+      %td Kingdom
+      %td= taxonomy.kingdom
+    %tr
+      %td Subkingdom
+      %td= taxonomy.subkingdom
+    %tr
+      %td Superphylum/Superdivision
+      %td= taxonomy.superphylum
+    %tr
+      %td Phylum/Division
+      %td= taxonomy.phylum
+    %tr
+      %td Subphylum/Subdivision
+      %td= taxonomy.subphylum
+    %tr
+      %td Superclass
+      %td= taxonomy.superclass
+    %tr
+      %td Class
+      %td= taxonomy.klass
+    %tr
+      %td Subclass
+      %td= taxonomy.subclass
+    %tr
+      %td Superorder
+      %td= taxonomy.superorder
+    %tr
+      %td Order
+      %td= taxonomy.order
+    %tr
+      %td Suborder
+      %td= taxonomy.suborder
+    %tr
+      %td Superfamily
+      %td= taxonomy.superfamily
+    %tr
+      %td Family
+      %td= taxonomy.family
+    %tr
+      %td Subfamily
+      %td= taxonomy.subfamily
+    %tr
+      %td Genus
+      %td= taxonomy.genus
+    %tr
+      %td Species
+      %td= taxonomy.species_name
+    %tr
+      %td Subspecies
+      %td= taxonomy.subspecies
