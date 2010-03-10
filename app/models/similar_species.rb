@@ -6,12 +6,7 @@ class SimilarSpecies < ActiveRecord::Base
     "Species##{similar_species_id}"
   end
   
-  def scientific_name
-    species = Species.where(:id => similar_species_id).first
-    species.scientific_name if species
-  end
-  
-  def scientific_name=(value)
-    
+  def target_species
+    Species.where(:id => similar_species_id).first
   end
 end
