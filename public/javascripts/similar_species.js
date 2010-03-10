@@ -1,5 +1,3 @@
 $(document).ready(function() {
-  $("input.autocomplete").each(function() {
-    attach_autocomplete(this);
-  });
+  attach_autocomplete($("input.autocomplete"));
 });

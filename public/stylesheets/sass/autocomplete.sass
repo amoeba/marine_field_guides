@@ -1,36 +1,21 @@
-.acInput
-  width: 200px
+* html .ui-autocomplete
+  width: 1px
 
-.acResults 
-  padding: 0px
-  border: 1px solid WindowFrame
-  background-color: Window
-  overflow: hidden
-
-  ul 
-    width: 100%
-    list-style-position: outside
-    list-style: none
-    padding: 0
-    margin: 0
-
-
-  li 
-    margin: 0px
-    padding: 2px 5px
-    cursor: pointer
-    display: block
-    width: 100%
-    font: menu
-    font-size: 12px
-    overflow: hidden
-
-
-.acLoading 
-  background: url('indicator.gif') right center no-repeat
-
-
-.acSelect 
-  background-color: Highlight
-  color: HighlightText
-
+.ui-autocomplete
+  border: 1px solid #000
+  list-style-type: none
+  margin: 0
+  padding: 0
+  width: 10em
+  position: absolute
+  cursor: default
+  background-color: #fff
+  
+  .ui-menu-item
+    a
+      line-height: 1.5em
+      padding: 0 2px
+      display: block
+    
+    a.ui-state-hover, a.ui-state-active
+      background-color: #B4D5FF

@@ -8,16 +8,23 @@ var insert_fields = function(link, method, content) {
   }
 }
 
-var insert_filter = function(content) {
-  $("input[type=\"submit\"]").before("<li>" + content + "</li>");
+var add_filter = function() {
+  var filter = $("#templates > .taxonomy").first().clone();
+  $("#filters").append(filter);
 }
 
 var attach_autocomplete = function(ele) {
-  $(ele).autocomplete({
-    url: "/search/autocomplete",  
-    maxItemsToShow: 10,
-    onItemSelect: function(selected, obj) {
-      $(obj.dom.$elem).prev().attr("value", selected.data[0]);
+  $("input.autocomplete").autocomplete({
+    source: "/search/autocomplete",
+    focus: function(event, ui) {
+      $(ele).val(ui.item.label);
+      $(ele).prev().val(ui.item.value);
+      return false;
+    },
+    select: function(event, ui) {
+      $(ele).val(ui.item.label);
+      $(ele).prev().val(ui.item.value);
+      return false;
     }
   });
 }
