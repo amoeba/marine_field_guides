@@ -1,2 +1,2 @@
 %li
-  %a{:href => species_path(similar_species.similar_species_id)}= "#{similar_species.scientific_name} (#TODO#)"
+  %a{:href => species_path(similar_species.similar_species_id)}= "#{similar_species.target_species.scientific_name} (#{similar_species.target_species.common_names.first})"
