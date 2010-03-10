@@ -1,0 +1,3 @@
+= text_field_tag "filters[][left]", filter['left']
+= select_tag "filters[][middle]", options_for_select([["=", "LIKE"], ["!=", "NOT LIKE"], [">", ">"], [">=", ">="], ["<", "<"], ["<=", "<="]], filter['middle'])
+= text_field_tag "filters[][right]", filter['right']

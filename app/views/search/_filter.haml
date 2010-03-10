@@ -1,6 +1,2 @@
-= label_tag "attribute"
-= text_field_tag 'attribute'
-= label_tag "operation"
-= select_tag "operation", %w[equal less greater not].map { |o| "<option value=\"#{o}\">#{o}</option>"}
-= label_tag "value"
-= text_field_tag 'value'
+= select_tag "filters[][association]", options_for_select(options_for_filter, filter['association']), { :class => "selector" }
+%span.filter= render :partial => "search/filters/#{filter['association']}", :locals => { :filter => filter }

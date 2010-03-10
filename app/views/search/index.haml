@@ -1,5 +1,29 @@
 %h2 Search
+
+%ul#templates
+  - options_for_filter.each do |filter|
+    %li{:class => filter[1]}
+      = render_filter filter[1]
+      
 - form_tag '/search' do
-  = add_filter_button
-  = render :partial => "filter"
+  %input#add-filter{:type => "button", :value => "Add Filter"}
+  
+  %ul#filters
+    -if params[:filters]
+      - params[:filters].each do |filter|
+        %li= render_filter filter
+    - else
+      %li= render_filter "taxonomy"
+        
   = submit_tag 'Submit'
+
+- if @species
+  %ul
+    - @species.each do |s|
+      %li= s.scientific_name
+    
+%h2 Debug
+= @filters.inspect
+= @associations.inspect
+
+= javascript_include_tag 'filter'
