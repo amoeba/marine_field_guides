@@ -28,3 +28,5 @@ gem 'paperclip',
   :git => "git://github.com/thoughtbot/paperclip", 
   :branch => "rails3"
 gem 'prawn', :require => 'prawn/core'  
+gem 'json'
+gem 'nokogiri'
