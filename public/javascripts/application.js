@@ -14,7 +14,7 @@ var add_filter = function() {
 }
 
 var attach_autocomplete = function(ele) {
-  $("input.autocomplete").autocomplete({
+  $(".autocomplete").autocomplete({
     source: "/search/autocomplete",
     focus: function(event, ui) {
       $(ele).val(ui.item.label);

@@ -1,5 +1,5 @@
 = hidden_field_tag "filters[][left]", "similar_species_id"
 = hidden_field_tag "filters[][middle]", "LIKE"
 with scientific name
-= hidden_field_tag "filters[][right]"
+= hidden_field_tag "filters[][right]", filter['right']
 %input.autocomplete{:type => "text"}

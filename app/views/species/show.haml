@@ -1,17 +1,9 @@
-%h2 Displaying single Species
+%h2
+  %em= "#{@species.scientific_name}"
+  
 %p
   = link_to("edit", edit_species_path(@species), :class => "action")
   = link_to("delete", species_path(@species), :method => 'delete', :confirm => "Are you sure?", :class => "action")
-
-%strong Scientific Name:
-%em= "#{@species.scientific_name}"
-
-%h3 Display Image
-- if @display_image
-  %img{:src => @display_image.image, :height => "100px"}
-- else
-  No display image chosen
-  
 
 %h3 Taxonomy
 = render(:partial => 'species/attributes/taxonomy', :locals => { :taxonomy => @species.taxonomy })
@@ -43,6 +35,12 @@
 %h3 Images
 %ul
   = render(:partial => 'species/attributes/image', :collection => @species.images)
+
+%h3 Display Image
+- if @display_image
+  %img{:src => @display_image.image, :height => "100px"}
+- else
+  No display image chosen
   
 %h3 Natural History
 %ul

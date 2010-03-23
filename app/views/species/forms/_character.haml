@@ -9,7 +9,4 @@
 
 = f.label(:unit)
 = f.text_field(:unit, :size => 10)
-    
-- unless f.object.new_record?
-  = f.check_box('_destroy')
-  = f.label('_destroy', 'Remove')
+%a{:class => "action remove-subform", :href => "#"} remove

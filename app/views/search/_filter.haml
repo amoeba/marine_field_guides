@@ -1,2 +1,3 @@
 = select_tag "filters[][association]", options_for_select(options_for_filter, filter['association']), { :class => "selector" }
 %span.filter= render :partial => "search/filters/#{filter['association']}", :locals => { :filter => filter }
+%a{:class => "action remove-filter", :href => "#"} remove

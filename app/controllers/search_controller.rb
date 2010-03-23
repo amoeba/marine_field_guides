@@ -13,7 +13,7 @@ class SearchController < ApplicationController
         end
       end
     else
-      @species = Species.all
+
     end
   end
   

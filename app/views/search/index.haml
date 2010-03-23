@@ -17,13 +17,14 @@
         
   = submit_tag 'Submit'
 
+%h2 Results
+
 - if @species
   %ul
     - @species.each do |s|
-      %li= s.scientific_name
+      %li= link_to s.scientific_name, species_path(s.id)
     
-%h2 Debug
-= @filters.inspect
-= @associations.inspect
+  - species_ids = @species.map { |s| s.id }.join(",")  
+  %a{:href => "/guide/?species_ids=#{species_ids}"} Generate PDF from these results
 
 = javascript_include_tag 'filter'

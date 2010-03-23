@@ -1,8 +1,8 @@
 class GuideController < ApplicationController
   def index
-    @species = Species.all.take(6)
+    @species = Species.find(params[:species_ids].split(","))
     @guide = ExtendedGuide.new(@species)
     
-    send_data(@guide.render, { :filename => "somepdf.pdf", :type => Mime::PDF})
+    send_data(@guide.render, { :filename => "Field Guide.pdf", :type => Mime::PDF})
   end
 end

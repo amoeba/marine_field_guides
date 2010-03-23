@@ -1,16 +1,6 @@
 - form_for(:species, @species, :url => url, :html => {:method => method, :multipart => true}) do |f|
   = f.error_messages
-
-  %div.group
-    %h3 General Attributes
-    
-    %h4 Display Image
-    %ul
-      - @species.images.each do |image|
-        %li
-          = f.label(:display_image, "<img src=\"#{image.image}\" height=\"100px\" />")
-          = f.radio_button(:display_image, image.id)
-      
+  
   %div.group
     %h3 Taxonomy
     - f.fields_for(:taxonomy) do |subform|
@@ -23,6 +13,14 @@
   = subform(f, :distribution)
   = subform(f, :habitats)
   = subform(f, :images)
+  
+  %h4 Display Image
+  %ul
+    - @species.images.each do |image|
+      %li
+        = f.label(:display_image, "<img src=\"#{image.image}\" height=\"100px\" />")
+        = f.radio_button(:display_image, image.id)
+          
   = subform(f, :natural_histories)
   = subform(f, :similar_species)
   = subform(f, :synonyms)
@@ -30,3 +28,4 @@
   = f.submit
 
 = javascript_include_tag "similar_species"
+= javascript_include_tag "species_form"

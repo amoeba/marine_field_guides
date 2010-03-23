@@ -6,8 +6,13 @@ $(document).ready(function() {
     var target = $(this).siblings(".filter").first();
     target.replaceWith(new_filter_dom);
     
-    attach_autocomplete($("input.autocomplete"));
+    attach_autocomplete($(".autocomplete"));
   });
   
   $("#add-filter").click(add_filter);
+  
+  $(".remove-filter").live('click', function() {
+    $(this).parent().remove();
+    console.log("remove");
+  });
 });

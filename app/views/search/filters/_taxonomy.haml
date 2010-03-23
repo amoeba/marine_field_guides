@@ -1,5 +1,4 @@
--#= select_tag "filters[][left]", options_for_select(options_for_taxonomy, filter['left'])
 = select_tag "filters[][left]", options_for_select(options_for_taxonomy)
 = hidden_field_tag "filters[][middle]", "LIKE"
 contains the text
-= text_field_tag "filters[][right]"
+= text_field_tag "filters[][right]", filter['right']

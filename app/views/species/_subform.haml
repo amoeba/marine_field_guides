@@ -5,4 +5,6 @@
 
   %ul{:id => model}
     - f.fields_for(model) do |subform|
-      %li= render(:partial => "species/forms/#{partial}", :locals => { :f => subform})
+      %li
+        = render(:partial => "species/forms/#{partial}", :locals => { :f => subform})
+        = subform.hidden_field('_destroy')

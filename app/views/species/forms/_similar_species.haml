@@ -1,6 +1,3 @@
-= f.hidden_field(:similar_species_id, :size => "5")
-= f.text_field(:scientific_name, :value => f.object.scientific_name, :class => "autocomplete")
-
-- unless f.object.new_record?
-  = f.check_box('_destroy')
-  = f.label('_destroy', 'Remove')
+= f.hidden_field(:similar_species_id)
+%input{:type => "text", :class => "autocomplete", :value => f.object.scientific_name, :size => "30"}
+%a{:class => "action remove-subform", :href => "#"} remove

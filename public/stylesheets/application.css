@@ -7,20 +7,45 @@ body {
   font-family: Sans-serif;
   margin: 1.5em; }
 
-#navigation ul li {
-  display: inline; }
+#wrap {
+  width: 950px;
+  margin: 0 auto; }
+  #wrap #header {
+    margin-bottom: 1.5em; }
+    #wrap #header #title {
+      width: 50%;
+      float: left; }
+      #wrap #header #title h1 {
+        margin: 0; }
+        #wrap #header #title h1 a {
+          color: #000;
+          text-decoration: none; }
+    #wrap #header #navigation {
+      width: 50%;
+      float: left; }
+      #wrap #header #navigation ul li {
+        display: inline; }
+  #wrap #sidebar {
+    clear: left;
+    float: left;
+    width: 150px; }
+    #wrap #sidebar h2 {
+      font-size: 1em; }
+    #wrap #sidebar ul {
+      margin: 0;
+      padding: 0 0 0 2em; }
+  #wrap #content {
+    width: 800px;
+    float: left; }
+  #wrap #footer {
+    clear: both;
+    text-align: center; }
 
 #errorExplanation {
   background-color: #FFFFCC;
   border: 1px solid red;
   padding: 0.75em 1.5em;
   margin: 0 0 1.5em 0; }
-
-#header h1 {
-  margin: 0; }
-  #header h1 a {
-    color: #000;
-    text-decoration: none; }
 
 a.action, #header a {
   color: #00E; }
@@ -37,6 +62,9 @@ a.action, #header a {
 
 #templates {
   display: none; }
+
+.clear {
+  clear: both; }
 
 * html .ui-autocomplete {
   width: 1px; }

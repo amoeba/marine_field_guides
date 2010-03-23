@@ -1,6 +1,3 @@
 = f.label(:value, "Synonym")
 = f.text_field(:value, :size => "25")
-    
-- unless f.object.new_record?
-  = f.check_box('_destroy')
-  = f.label('_destroy', 'Remove')
+%a{:class => "action remove-subform", :href => "#"} remove
