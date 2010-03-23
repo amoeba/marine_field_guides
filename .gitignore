@@ -4,3 +4,5 @@ tmp
 doc
 public/system/**/*
 .bundle
+.DS_Store
+public/.DS_Store
