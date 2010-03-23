@@ -1,6 +1,6 @@
-.bundle
 db/*.sqlite3
-log/*.log
-tmp/**/*
-doc/**/*
+log
+tmp
+doc
 public/system/**/*
+.bundle
