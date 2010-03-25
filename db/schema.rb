@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100223222821) do
+ActiveRecord::Schema.define(:version => 20100324191210) do
 
   create_table "abundances", :force => true do |t|
     t.integer  "species_id"
@@ -64,6 +64,13 @@ ActiveRecord::Schema.define(:version => 20100223222821) do
   end
 
   create_table "natural_histories", :force => true do |t|
+    t.integer  "species_id"
+    t.text     "value"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "references", :force => true do |t|
     t.integer  "species_id"
     t.text     "value"
     t.datetime "created_at"

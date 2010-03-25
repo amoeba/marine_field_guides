@@ -53,3 +53,7 @@
 %h3 Synonym
 %ul
   = render(:partial => 'species/attributes/synonym', :collection => @species.synonyms)
+  
+%h3 References
+%ul
+  = render(:partial => 'species/attributes/references', :collection => @species.references)

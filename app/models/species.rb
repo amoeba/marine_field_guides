@@ -7,6 +7,7 @@ class Species < ActiveRecord::Base
     :habitats, 
     :images, 
     :natural_histories, 
+    :references,
     :similar_species, 
     :synonyms
   ]
