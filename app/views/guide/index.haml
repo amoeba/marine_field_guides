@@ -1,0 +1,48 @@
+%h2 Prepare Your Field Guide
+- form_tag "/guide/generate" do
+  %h3 Titles
+  
+  = label_tag "title", "Title"
+  = text_field_tag "title"
+  %br
+  
+  = label_tag "subtitle", "Subtitle"
+  = text_field_tag "subtitle"
+  %br
+  
+  %h3 Style and Color
+  Color:
+  = radio_button_tag "color", "red"
+  = label_tag "color_red", "Red"
+  
+  
+  = radio_button_tag "color", "blue"
+  = label_tag "color_blue", "Blue"
+  
+  = radio_button_tag "color", "green"
+  = label_tag "color_green", "Green"
+  %br
+  
+  Style:
+  = radio_button_tag "style", "extended", :checked => true
+  = label_tag "style_extended", "Extended"
+  
+  = radio_button_tag "style", "simple"
+  = label_tag "style_simple", "Simple"
+  
+  = radio_button_tag "style", "gallery"
+  = label_tag "style_gallery", "Gallery"
+  
+  %h3 Species
+  
+  .ui-widget
+    Manually add another species:
+    %input.autocomplete
+  
+  %ul#species
+
+      
+  
+  = submit_tag "Generate Guide"
+= javascript_include_tag "autocomplete"
+
