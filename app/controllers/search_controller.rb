@@ -18,15 +18,13 @@ class SearchController < ApplicationController
   end
   
   def autocomplete
-    @species = Species.joins(:taxonomy)
-    
     values = params[:term].split(" ").map { |value| value + "%" }
     clause = "genus LIKE ?"
     clause << " AND species_name LIKE ?" if values.length > 1
     
-    @species = @species.where([clause, *values])
+    @species = Species.joins(:taxonomy).where([clause, *values])
     
-    render :json => @species.map { |species| { :label => species.scientific_name, :value => species.id } }
+    render :json => @species.map { |species| { :label => species.scientific_name, :value => species.id.to_s } }
   end
   
   private
