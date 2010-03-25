@@ -14,8 +14,9 @@ var add_filter = function() {
 }
 
 var attach_autocomplete = function(ele) {
-  $(".autocomplete").autocomplete({
+  $(ele).autocomplete({
     source: "/search/autocomplete",
+    minLength: 3,
     focus: function(event, ui) {
       $(ele).val(ui.item.label);
       $(ele).prev().val(ui.item.value);
@@ -25,6 +26,15 @@ var attach_autocomplete = function(ele) {
       $(ele).val(ui.item.label);
       $(ele).prev().val(ui.item.value);
       return false;
+    },
+    search: function(event, ui) {
+      console.log("Searching...");
+    },
+    open: function(event, ui) {
+      console.log("Opening...");
+    },
+    close: function(event, ui) {
+      console.log("Closing...");
     }
   });
 }
