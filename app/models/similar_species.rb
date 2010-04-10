@@ -3,7 +3,7 @@ class SimilarSpecies < ActiveRecord::Base
   validates_presence_of :similar_species_id
   
   def to_s
-    "Species##{similar_species_id}"
+    "#{scientific_name} (#{first_common_name})"
   end
   
   def similar_to
