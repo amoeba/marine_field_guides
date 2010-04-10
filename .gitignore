@@ -6,3 +6,4 @@ public/system/**/*
 .bundle
 .DS_Store
 public/.DS_Store
+vendor/bundled_gems
