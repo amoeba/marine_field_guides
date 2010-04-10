@@ -46,6 +46,8 @@ FieldGuides::Application.routes.draw do |map|
   #     resources :products
   #   end
 
+  
+  
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
   # root :to => "welcome#index"
@@ -57,6 +59,18 @@ FieldGuides::Application.routes.draw do |map|
   # match ':controller(/:action(/:id(.:format)))'
   
   resources :species
-  match '/' => 'species#index'
+  
+  namespace :admin do
+    resources :species
+  end
+  
+  root :to => 'pages#index'
+  
+  match '/about', :to => 'pages#about'
+  match '/legal', :to => 'pages#legal'
+  match '/contact', :to => 'pages#contact'
+  match '/library', :to => 'pages#library'
+  match 'admin/', :to => 'admin/species#index'
+  
   match '/:controller(/:action(/:id))'
 end
