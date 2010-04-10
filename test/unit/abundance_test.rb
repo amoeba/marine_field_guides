@@ -1,8 +1,9 @@
 require 'test_helper'
 
 class AbundanceTest < ActiveSupport::TestCase
-  # Replace this with your real tests.
-  test "the truth" do
-    assert true
+  test "an abundance without a value should be invalid" do
+    abundance = Abundance.new
+    
+    assert !abundance.valid?, "An abundance without a value was valid"
   end
 end

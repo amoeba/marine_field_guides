@@ -1,8 +1,9 @@
 require 'test_helper'
 
 class DistinguishingCharactersTest < ActiveSupport::TestCase
-  # Replace this with your real tests.
-  test "the truth" do
-    assert true
+  test "a distinguishing character without a value should be invalid" do
+    distinguishing_character = DistinguishingCharacter.new
+    
+    assert !distinguishing_character.valid?, "A distinguishign character without a value was valid"
   end
 end

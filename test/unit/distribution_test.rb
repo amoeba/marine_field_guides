@@ -1,8 +1,9 @@
 require 'test_helper'
 
 class DistributionTest < ActiveSupport::TestCase
-  # Replace this with your real tests.
-  test "the truth" do
-    assert true
+  test "a distribution without a value should be invalid" do
+    distribution = Distribution.new
+    
+    assert !distribution.valid?, "A distribution without a value was valid"
   end
 end

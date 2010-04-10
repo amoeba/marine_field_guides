@@ -1,8 +1,9 @@
 require 'test_helper'
 
 class ReferenceTest < ActiveSupport::TestCase
-  # Replace this with your real tests.
-  test "the truth" do
-    assert true
+  test "a reference without a value should be invalid" do
+    reference = Reference.new
+    
+    assert !reference.valid?, "A reference without a value was valid"
   end
 end

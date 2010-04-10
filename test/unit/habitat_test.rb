@@ -1,8 +1,9 @@
 require 'test_helper'
 
 class HabitatTest < ActiveSupport::TestCase
-  # Replace this with your real tests.
-  test "the truth" do
-    assert true
+  test "a habitat without a value should be invalid" do
+    habitat = Habitat.new
+    
+    assert !habitat.valid?, "A habitat without a value was valid"
   end
 end
