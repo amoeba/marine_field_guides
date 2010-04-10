@@ -1,11 +1,10 @@
-# Edit this Gemfile to bundle your application's dependencies.
-source :gemcutter
+source 'http://rubygems.org'
 
-gem "rails", "3.0.0.beta"
-gem "sqlite3-ruby", :require => "sqlite3"
+gem 'rails', '3.0.0.beta2'
 gem 'haml'
-git "git://github.com/thoughtbot/paperclip", :branch => "rails3"
-gem 'paperclip'
-gem 'prawn', :require => 'prawn/core'  
 gem 'json'
 gem 'nokogiri'
+gem 'mysql'
+
+gem 'prawn', :path => 'vendor/prawn'
+gem 'paperclip', :path => 'vendor/paperclip'
