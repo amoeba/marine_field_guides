@@ -85,6 +85,7 @@ ActiveRecord::Schema.define(:version => 20100324191210) do
   end
 
   create_table "species", :force => true do |t|
+    t.string   "common_names"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "display_image"
