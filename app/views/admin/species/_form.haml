@@ -1,0 +1,37 @@
+= form_for(:species, @species, :url => url, :html => {:method => method, :multipart => true}) do |f|
+  = f.error_messages
+  
+  .group
+    = f.submit
+    = link_to("Delete Species", admin_species_path(@species), :method => 'delete', :confirm => "Are you sure?", :class => "action") unless @species.new_record?
+    
+  .group
+    %h3 Taxonomy
+    = f.fields_for(:taxonomy) do |subform|
+      = render(:partial => 'admin/species/forms/taxonomy', :locals => { :f => subform})    
+
+  = subform(f, :abundances)
+  = subform(f, :characters)
+  = subform(f, :common_names)
+  = subform(f, :distinguishing_characters)
+  = subform(f, :distribution)
+  = subform(f, :habitats)
+  = subform(f, :images)
+  
+  = if !@species.new_record?
+    .group
+      %h4 Display Image
+      %ul
+        - @species.images.each do |image|
+          %li
+            = f.label(:display_image, "<img src=\"#{image.image}\" />")
+            = f.radio_button(:display_image, image.id)
+          
+  = subform(f, :natural_histories)
+  = subform(f, :similar_species)
+  = subform(f, :synonyms)
+  = subform(f, :references)
+    
+  = f.submit
+
+= javascript_include_tag "species_form"

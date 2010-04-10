@@ -1,0 +1,4 @@
+- unless f.object.new_record?
+  %img{:src => f.object.image.url, :alt => f.object.image_file_name}
+= f.file_field :image
+%input{:type => 'button', :class => "action remove-subform", :value => 'Remove'} 

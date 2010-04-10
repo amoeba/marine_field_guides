@@ -1,6 +1,10 @@
 %h2
-  %span.scientific-name= "#{@species.scientific_name}"
-  = "(#{@species.common_name})"
+  %em= "#{@species.scientific_name}"
+  
+%p
+  = link_to("edit", edit_admin_species_path(@species), :class => "action")
+  = link_to("delete", admin_species_path(@species), :method => 'delete', :confirm => "Are you sure?", :class => "action")
+
 %h3 Taxonomy
 = render(:partial => 'shared/species/attributes/taxonomy', :locals => { :taxonomy => @species.taxonomy })
   
@@ -31,6 +35,12 @@
 %h3 Images
 %ul
   = render(:partial => 'shared/species/attributes/image', :collection => @species.images)
+
+%h3 Display Image
+- if @display_image
+  %img{:src => @display_image.image, :height => "100px"}
+- else
+  No display image chosen
   
 %h3 Natural History
 %ul

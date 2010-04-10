@@ -1,0 +1,34 @@
+%h2 Advanced Search
+
+%ul#templates
+  - options_for_filter.each do |filter|
+    %li{:class => filter[1]}
+      = render_filter filter[1]
+      
+- form_tag '/search' do
+  %input.add-filter{:type => 'button', :value => 'Add Filter'}
+  %ul#filters
+    -if params[:filters]
+      - params[:filters].each do |filter|
+        %li= render_filter filter
+    - else
+      %li= render_filter "taxonomy"
+        
+  = submit_tag 'Submit'
+
+- if @species
+  %h2 Results
+  
+  - form_tag '/guide', :method => 'post' do
+    %input{:type => 'submit', :value => 'Generate Field Guide'}
+    %ul
+      - @species.each do |s|
+        %input{:type => 'hidden', :name => 'species[][id]', :value => s.id}
+        %li
+          %a{:href => species_path(s.id)}
+            %span.scientific-name= s.scientific_name
+            = "(#{s.common_name})"
+    %input{:type => 'submit', :value => 'Generate Field Guide'}
+  
+
+= javascript_include_tag 'filter'

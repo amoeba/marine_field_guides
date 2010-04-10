@@ -1,0 +1,7 @@
+%form{:action => quicksearch_path}
+  %label{:for => "quicksearch"} Find a Species
+  %input#quicksearch.autocomplete{:type => "text", :name => 'scientific_name'}
+  %input{:type => 'submit', :value => 'Search'}
+  %a{:href => '/search/advanced'} Advanced Search
+  %br
+  .hint Enter a scientific or common name. e.g. "Puffinus bulleri", "Chinook Salmon"

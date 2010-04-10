@@ -1,0 +1,6 @@
+%li
+  %strong= "#{character.name}"
+  - if !character.morph.nil? and character.morph.length > 0
+    = "(#{character.morph})"
+  = ": #{character.value}"
+  = "#{character.unit}"

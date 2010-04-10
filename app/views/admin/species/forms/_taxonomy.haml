@@ -1,5 +1,3 @@
-= javascript_include_tag "itis"
-
 %input#itis{:type => "button", :value => "Automatically fill Taxonomy from ITIS"} 
 %span#itis-status 
 
@@ -59,3 +57,5 @@
     %tr
       %td= f.label(:subspecies)
       %td= f.text_field(:subspecies, :size => "25")
+
+= javascript_include_tag "itis"
