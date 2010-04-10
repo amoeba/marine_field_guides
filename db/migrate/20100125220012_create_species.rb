@@ -2,7 +2,7 @@ class CreateSpecies < ActiveRecord::Migration
   def self.up
     create_table :species do |t|
       t.string :scientific_name
-      t.common_names :string
+      t.string :common_names
       t.timestamps
     end
   end
