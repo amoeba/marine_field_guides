@@ -2,33 +2,26 @@
 %html
   %head
     %title
-    = stylesheet_link_tag "application"
-    = javascript_include_tag "jquery-1.4.2.min"
-    = javascript_include_tag "jquery-ui-1.8.custom.min.js"
-    = javascript_include_tag "rails"
-    = javascript_include_tag "application"
+    = stylesheet_link_tag 'application'
+    = javascript_include_tag 'jquery'
+    = javascript_include_tag 'jqueryui'
+    = javascript_include_tag 'rails'
+    = javascript_include_tag 'application'
+    = javascript_include_tag 'autocomplete'
     = csrf_meta_tag
   %body
     #wrap
       #header
-        #title
-          %h1
-            %a{:href => "/"} Field Guides
-        #navigation
-          %label{:for => "search"} Search
-          %input#search{:type => "text"}
-        .clear
-      #sidebar
-        %h2 Browse
-        %ul
-          %li Animalia
-          %li Plantae
-          %li Fungi
-          %li Protista
-          %li Eubacteria
-          %li Archaebacteria
-          
+        %h1
+          %a{:href => "/"} Marine Field Guides
+      #search
+        = render :partial => 'shared/quicksearch'
       #content= yield
-      .clear
       #footer
-        Footer
+        %ul
+          %li
+            %a{:href => '/about'} About
+          %li
+            %a{:href => '/legal'} Legal
+          %li
+            %a{:href => '/contact'} Contact
