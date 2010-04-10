@@ -1,30 +1,12 @@
-%h2 Search
-
-%ul#templates
-  - options_for_filter.each do |filter|
-    %li{:class => filter[1]}
-      = render_filter filter[1]
-      
-- form_tag '/search' do
-  %input#add-filter{:type => "button", :value => "Add Filter"}
-  
-  %ul#filters
-    -if params[:filters]
-      - params[:filters].each do |filter|
-        %li= render_filter filter
-    - else
-      %li= render_filter "taxonomy"
-        
-  = submit_tag 'Submit'
-
-%h2 Results
-
+%form
+- if flash[:notice]
+  .notice= flash[:notice]
+ 
 - if @species
+  %h3 Results 
   %ul
-    - @species.each do |s|
-      %li= link_to s.scientific_name, species_path(s.id)
-    
-  - species_ids = @species.map { |s| s.id }.join(",")  
-  %a{:href => "/guide/?species_ids=#{species_ids}"} Generate PDF from these results
-
-= javascript_include_tag 'filter'
+    - @species.each do |species|
+      %li
+        %a{:href => species_url(species)}
+          %span.scientific-name= species.scientific_name
+          = "(#{species.common_name})"
