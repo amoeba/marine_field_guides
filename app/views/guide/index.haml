@@ -1,48 +1,59 @@
-%h2 Prepare Your Field Guide
+%h2 Create Your Field Guide
 - form_tag "/guide/generate" do
-  %h3 Titles
+  -if flash[:notice]
+    .notice= flash[:notice]
+  %h3 Step 1: Titles
   
-  = label_tag "title", "Title"
-  = text_field_tag "title"
+  = label_tag "options[title]", "Title"
+  = text_field_tag "options[title]"
   %br
   
-  = label_tag "subtitle", "Subtitle"
-  = text_field_tag "subtitle"
+  = label_tag "options[subtitle]", "Subtitle"
+  = text_field_tag "options[subtitle]"
   %br
   
-  %h3 Style and Color
+  %h3 Step 2: Style and Color
   Color:
-  = radio_button_tag "color", "red"
-  = label_tag "color_red", "Red"
+  = radio_button_tag "options[color]", "CC0000"
+  = label_tag "options[color][CC0000]", "Red"
   
   
-  = radio_button_tag "color", "blue"
-  = label_tag "color_blue", "Blue"
+  = radio_button_tag "options[color]", "0000CC"
+  = label_tag "options[color][0000CC]", "Blue"
   
-  = radio_button_tag "color", "green"
-  = label_tag "color_green", "Green"
+  = radio_button_tag "options[color]", "00CC00"
+  = label_tag "options[color][00CC00]", "Green"
   %br
   
   Style:
-  = radio_button_tag "style", "extended", :checked => true
-  = label_tag "style_extended", "Extended"
+  = radio_button_tag "options[style]", "extended", :checked => true
+  = label_tag "options[style][extended]", "Extended"
   
-  = radio_button_tag "style", "simple"
-  = label_tag "style_simple", "Simple"
+  = radio_button_tag "options[style]", "simple"
+  = label_tag "options[style][simple]", "Simple"
   
-  = radio_button_tag "style", "gallery"
-  = label_tag "style_gallery", "Gallery"
+  = radio_button_tag "options[style]", "gallery"
+  = label_tag "options[style][gallery]", "Gallery"
   
-  %h3 Species
+  %h3 Step 3: Add Species
   
   .ui-widget
     Manually add another species:
     %input.autocomplete
   
   %ul#species
-
+    - if @species
+      - @species.each do |species|
+        %li
+          -#%input{:type => "hidden", :id => "species[][#{species.id}]", :value => species.id}
+          = hidden_field_tag "species[][id]", species.id
+          %a{:href => url_for(species)}
+            %span.scientific-name= species.scientific_name
+            = "(#{species.common_name})" unless !species.common_name
+          %input{:type => "button", :class => "action remove", :value => "remove"}
+    
       
   
   = submit_tag "Generate Guide"
-= javascript_include_tag "autocomplete"
 
+= javascript_include_tag "guide"
