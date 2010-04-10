@@ -1,4 +1,6 @@
 class Species < ActiveRecord::Base
+  validates :taxonomy, :presence => true
+  
   models = [:abundances, 
     :characters, 
     :common_names, 
@@ -14,18 +16,24 @@ class Species < ActiveRecord::Base
   
   models.each do |model|
     has_many model, :dependent => :destroy
-    accepts_nested_attributes_for model,
-      :reject_if => :all_blank,
-      :allow_destroy => true
+    accepts_nested_attributes_for model, :allow_destroy => true
   end
   
   has_one :taxonomy, :dependent => :destroy
-  
-  accepts_nested_attributes_for :taxonomy,
-    :reject_if => proc { |a| a['genus'].blank? or a['species_name'].blank? },
-    :allow_destroy => true
+  accepts_nested_attributes_for :taxonomy
   
   def scientific_name
     "#{taxonomy.genus} #{taxonomy.species_name}" if taxonomy
+  end
+  
+  # Returns the first ("best") common name for this species or false if the species
+  # has no common names
+  def common_name
+    common_names.size > 0 ? common_names.first.value : "No Common Name(s)"
+  end
+  
+  #TODO
+  def display_image
+    
   end
 end
